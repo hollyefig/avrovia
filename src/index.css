@@ -1,0 +1,80 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --displayFont: 'Yeseva One', cursive;
+  --copyFont: 'Montserrat', sans-serif;
+  --bold: 700;
+  --regular: 400;
+  --h1: 3.5rem;
+  --dark: #212937;
+}
+
+.dark {
+  --background: #212937;
+  --secondaryColor: #1a1d2c;
+  --fontColor: #ccccbf;
+  --backdropFilter: blur(6px) grayscale(.6);
+  --flowersBg: url(../src/assets/flowersBGDark.JPG);
+  --logo: url(../src/assets/logoDark.png);
+  --pink:#ae576b;
+  --green:#5b8e4f;
+  --greenHover:#72c54b;
+  --textShadow: 4px 4px 0px var(--secondaryColor);
+}
+
+.light {
+  --background: #ccccbf;
+  --secondaryColor: #b4b7a3;
+  --fontColor: #212937;
+  --backdropFilter: blur(6px) sepia(.6);
+  --flowersBg: url(../src/assets/flowersBGLight.JPG);
+  --logo: url(../src/assets/logoLight.png);
+  --pink:#ae576b;
+  --green:#5b8e4f;
+  --greenHover:#72c54b;
+  --textShadow: 4px 4px 0px var(--secondaryColor);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body a {
+  color: var(--green);
+  text-decoration: none;
+  transition: color .3s ease-out;
+}
+
+body a:hover {
+  color: var(--greenHover);
+}
+
+.App {
+  height: auto;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--fontColor);
+  position: relative;
+}
+
+.sections {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+}
+
+.scrollSnap {
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  height:100vh;
+}

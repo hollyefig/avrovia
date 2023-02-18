@@ -1,0 +1,63 @@
+.headerWrapper {
+    height: 100vh;
+    width: 100%;
+    background-image: var(--flowersBg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+}
+
+.headerWrapper > .backdropFilter {
+    backdrop-filter: var(--backdropFilter);
+    -webkit-backdrop-filter: var(--backdropFilter);
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    position: relative;
+}
+
+.logoWrapper {
+    width: 100%;
+    height: 60vh;
+    display:grid;
+    grid-template-rows: 1fr 70px;
+    position: relative;
+    top:50px;
+    opacity: 0;
+    transition: all 1s ease-out;
+    transition-delay: .5s;
+}
+
+.logoWrapperFadeIn {
+    opacity: 1;
+    top:0px;
+}
+
+.logo {
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    display: flex;
+}
+
+.headerTitle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    transition-delay: 1.5s;
+}
+
+.headerTitleFadeIn {
+    opacity: 1;
+}

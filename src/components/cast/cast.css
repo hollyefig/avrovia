@@ -1,0 +1,100 @@
+.castWrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.castContainer {
+    width:95%;
+    height:70%;
+    display:grid;
+    grid-template-rows: 70px 1fr;
+    margin:1em 0 0 0;
+    row-gap: 20px;
+    position: relative;
+    opacity:0;
+    top:10vh;
+    transition: all .5s ease-out;
+    transition-delay: .5s;
+}
+
+.castContainerFadeIn {
+    opacity: 1;
+    top:0;
+}
+
+.castTitle > h1 {
+    font-family: var(--displayFont);
+    text-shadow: var(--textShadow);
+    font-size: var(--h1);
+}
+
+.characterWrapper {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding:1em 0;
+}
+
+.castCard {
+    width:100%;
+    min-width: 250px;
+    height:100%;
+    background-color: var(--secondaryColor);
+    position: relative;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--textShadow);
+    opacity: 0;
+    left:5vw;
+    transition: all .3s ease-out;
+}
+
+.castCardFadeIn {
+    opacity:1;
+    left:0;
+}
+
+.castCard img {
+    height:100%;
+    opacity: .4;
+    transform: scale(100%);
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+
+.castCard img:hover {
+    opacity:1;
+    transform: scale(120%);
+}
+
+.castName {
+    position: absolute;
+    top:50%;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    color: var(--dark);
+    font-family: var(--displayFont);
+    font-weight: var(--bold);
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+
+.castCard img:hover ~ .castName {
+    opacity:1;
+}
+
