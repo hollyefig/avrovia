@@ -67,6 +67,7 @@
 .themeSwitchWrapper {
     justify-content: flex-end;
     padding:0em 1.5em 0em 0em;
+    display: none;
 }
 
 .navLogoWrapper {

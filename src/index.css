@@ -17,13 +17,13 @@ body {
 }
 
 .dark {
-  --background: #212937;
-  --secondaryColor: #1a1d2c;
+  --background: #2a2e25;
+  --secondaryColor: #1d1f1b;
   --fontColor: #ccccbf;
   --backdropFilter: blur(6px) grayscale(.6);
   --flowersBg: url(../src/assets/flowersBGDark.JPG);
   --logo: url(../src/assets/logoDark.png);
-  --pink:#ae576b;
+  --pink:#f14f7e;
   --green:#5b8e4f;
   --greenHover:#72c54b;
   --textShadow: 4px 4px 0px var(--secondaryColor);
