@@ -5,19 +5,21 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../assets/vine2.png);
+    /* background-image: url(../../assets/vine2.png); */
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+    --height: 70%;
 }
 
 .castContainer {
     width:95%;
-    height:70%;
+    height:var(--height);
     display:grid;
     grid-template-rows: 70px 1fr;
     margin:1em 0 0 0;
     row-gap: 20px;
-    position: relative;
+    position:absolute;
     opacity:0;
     top:10vh;
     transition: all .5s ease-out;
@@ -26,7 +28,11 @@
 
 .castContainerFadeIn {
     opacity: 1;
-    top:0;
+    top:calc(50% - var(--height) / 2);
+}
+
+.slideUp {
+    top: -100vh;
 }
 
 .castTitle > h1 {
@@ -99,5 +105,63 @@
 
 .castCard img:hover ~ .castName {
     opacity:1;
+}
+
+/* cast display  */
+
+.castDisplayWrapper {
+    width: 100%;
+    height: 0%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    transition: height .5s ease-out;
+    transition-delay: 1s;
+}
+
+.castDisplayWrapperHeight {
+    height: 100%;
+}
+
+.castDisplayGrid {
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.castDisplayGrid > div {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.castImg img {
+    width: 60%;
+    box-shadow: var(--textShadow);
+}
+
+.castInfo {
+    padding:2em;
+}
+
+.castInfoDiv {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondaryColor);
+    display:grid;
+    padding:1em 1em 1em 2em;
+}
+
+.displayName {
+    font-family: var(--displayFont);
+    font-weight: var(--bold);
+    font-size: var(--h1);
+    color: var(--fontColor);
 }
 
