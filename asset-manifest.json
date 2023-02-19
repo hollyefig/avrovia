@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.24ffa853.css",
+    "main.css": "/avrovia/static/css/main.bcec5089.css",
     "main.js": "/avrovia/static/js/main.f668be69.js",
     "static/media/anya.PNG": "/avrovia/static/media/anya.dd7956bfef6c5ac5d8e4.PNG",
     "static/media/flowersBGLight.JPG": "/avrovia/static/media/flowersBGLight.b7748681321ba27ff6fb.JPG",
@@ -10,11 +10,11 @@
     "static/media/vine.png": "/avrovia/static/media/vine.a981bb7d2e113cd54915.png",
     "static/media/d20.svg": "/avrovia/static/media/d20.751647618a5622c3590a5cb71911dc2a.svg",
     "index.html": "/avrovia/index.html",
-    "main.24ffa853.css.map": "/avrovia/static/css/main.24ffa853.css.map",
+    "main.bcec5089.css.map": "/avrovia/static/css/main.bcec5089.css.map",
     "main.f668be69.js.map": "/avrovia/static/js/main.f668be69.js.map"
   },
   "entrypoints": [
-    "static/css/main.24ffa853.css",
+    "static/css/main.bcec5089.css",
     "static/js/main.f668be69.js"
   ]
 }
