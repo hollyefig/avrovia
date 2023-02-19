@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/hollyefig/avrovia.git/static/css/main.f7bfa547.css",
+    "main.css": "/hollyefig/avrovia.git/static/css/main.cfbf45ac.css",
     "main.js": "/hollyefig/avrovia.git/static/js/main.2e7a1d16.js",
     "static/media/anya.PNG": "/hollyefig/avrovia.git/static/media/anya.dd7956bfef6c5ac5d8e4.PNG",
     "static/media/flowersBGLight.JPG": "/hollyefig/avrovia.git/static/media/flowersBGLight.b7748681321ba27ff6fb.JPG",
     "static/media/logoDark.png": "/hollyefig/avrovia.git/static/media/logoDark.e2dcda925be2ea00c9a0.png",
     "static/media/logoLight.png": "/hollyefig/avrovia.git/static/media/logoLight.ee7039fd26ff8f0b679f.png",
     "static/media/flowersBGDark.JPG": "/hollyefig/avrovia.git/static/media/flowersBGDark.cbee8f05b22c1505ec77.JPG",
+    "static/media/vine2.png": "/hollyefig/avrovia.git/static/media/vine2.5993383cf5b0ec4fb9c7.png",
     "static/media/vine.png": "/hollyefig/avrovia.git/static/media/vine.a981bb7d2e113cd54915.png",
     "static/media/d20.svg": "/hollyefig/avrovia.git/static/media/d20.751647618a5622c3590a5cb71911dc2a.svg",
     "index.html": "/hollyefig/avrovia.git/index.html",
-    "main.f7bfa547.css.map": "/hollyefig/avrovia.git/static/css/main.f7bfa547.css.map",
+    "main.cfbf45ac.css.map": "/hollyefig/avrovia.git/static/css/main.cfbf45ac.css.map",
     "main.2e7a1d16.js.map": "/hollyefig/avrovia.git/static/js/main.2e7a1d16.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7bfa547.css",
+    "static/css/main.cfbf45ac.css",
     "static/js/main.2e7a1d16.js"
   ]
 }
