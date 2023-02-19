@@ -32,6 +32,7 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
             </div>
             <div className='castInfo'>
               <div className='castInfoDiv'>
+                <div className='goldFrame'></div>
                 <div className='displayName'>{currentChar.name}</div>
                 <div className='displayRace'>{currentChar.race}</div>
                 <div className='displayClass'>{currentChar.class}</div>

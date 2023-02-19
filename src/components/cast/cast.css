@@ -5,7 +5,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url(../../assets/vine2.png); */
+    background-image: url(../../assets/bgTexture.png);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -156,6 +156,23 @@
     display:grid;
     grid-template-rows: 2fr 1fr 1fr 3fr 1fr;
     padding:1em 1em 1em 2em;
+    background-image: url(../../assets/goldDust.png);
+    background-repeat: no-repeat;
+    background-size: 20vw;
+    background-position: right bottom;
+    position: relative;
+}
+
+.goldFrame {
+    position: absolute;
+    background-image: url(../../assets/goldFrame.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+    width: 150px;
+    height: 150px;
+    top: -35px;
+    left: -38px;
 }
 
 .displayName {
@@ -173,7 +190,7 @@
     width: 100%;
     cursor: pointer;
     background-color: transparent;
-    border:2px solid var(--fontColor);
+    border:0;
     padding:10px 0;
     font-weight: var(--bold);
     color: var(--fontColor);
