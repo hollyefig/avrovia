@@ -3,7 +3,7 @@ import React from "react";
 export default function Castcard({ cast, castVisible, castContainerOut }) {
   return (
     <div
-      className={`castCard ${castVisible ? "castCardFadeIn" : null}`}
+      className={`castCard ${castVisible && "castCardFadeIn"}`}
       style={{ transitionDelay: cast.timer }}
       onClick={() => castContainerOut(cast)}
     >

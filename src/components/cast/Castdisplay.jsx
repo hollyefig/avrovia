@@ -34,9 +34,23 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
               <div className='castInfoDiv'>
                 <div className='goldFrame'></div>
                 <div className='displayName'>{currentChar.name}</div>
-                <div className='displayRace'>{currentChar.race}</div>
-                <div className='displayClass'>{currentChar.class}</div>
+                <div className='displayRace'>
+                  Race:
+                  <h3>{currentChar.race}</h3>
+                </div>
+                <div className='displayClass'>
+                  Class:
+                  <h3>{currentChar.class}</h3>
+                </div>
+                <div className='displayAlignment'>
+                  Alignment:
+                  <h3>{currentChar.alignment}</h3>
+                </div>
                 <div className='displayAbout'>{currentChar.about}</div>
+                <div className='displayPlayerNotes'>
+                  Player's Notes:
+                  <p>{currentChar.playersNotes}</p>
+                </div>
                 <div className='backButton'>
                   <button type='button' onClick={backButton}>
                     Back

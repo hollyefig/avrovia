@@ -50,6 +50,7 @@
     padding:1em 0;
 }
 
+/* cast card  */
 .castCard {
     width:100%;
     min-width: 250px;
@@ -85,7 +86,7 @@
 
 .castName {
     position: absolute;
-    top:50%;
+    top:45%;
     z-index: 4;
     display: flex;
     justify-content: center;
@@ -95,10 +96,10 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    color: var(--dark);
+    color: var(--secondaryColor);
     font-family: var(--displayFont);
     font-weight: var(--bold);
-    font-size: 2rem;
+    font-size: 4vw;
     opacity: 0;
     transition: opacity .5s ease-out;
 }
@@ -154,7 +155,8 @@
     height: 100%;
     background-color: var(--secondaryColor);
     display:grid;
-    grid-template-rows: 2fr 1fr 1fr 3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr) 1.5fr 1fr 1fr;
     padding:1em 1em 1em 2em;
     background-image: url(../../assets/goldDust.png);
     background-repeat: no-repeat;
@@ -176,10 +178,36 @@
 }
 
 .displayName {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
     font-family: var(--displayFont);
     font-weight: var(--bold);
     font-size: var(--h1);
     color: var(--fontColor);
+}
+
+.displayAbout {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
+
+.displayPlayerNotes {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    font-size: .8rem;
+    font-style: italic;
+}
+
+.displayPlayerNotes > p {
+    margin:.5em 0 0 0;
+}
+
+.backButton {
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .backButton > button {
@@ -192,8 +220,17 @@
     background-color: transparent;
     border:0;
     padding:10px 0;
-    font-weight: var(--bold);
     color: var(--fontColor);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-family: var(--displayFont);
+    transition: color .3s ease-out;
+}
+
+.backButton > button:hover {
+    color: var(--pink);
+}
+
+.castInfoDiv > div > h3 {
+    color: var(--pink);
 }
 
