@@ -4,10 +4,10 @@
     position: relative;
     display:flex;
     padding:2em;
-    background-image: url(../../assets/vine.png);
+    background-image: url(../../assets/flowersClip.png);
     background-repeat: no-repeat;
-    background-size: 40vw;
-    background-position: left 80%;
+    background-size: 47%;
+    background-position: left -5vw bottom;
 }
 
 .aboutCopy {
@@ -21,7 +21,7 @@
 .d20 {
     color: var(--fontColor);
     stroke: var(--fontColor);
-    --diceWidth: 200px;
+    --diceWidth: 250px;
     fill: var(--fontColor);
     width: 100%;
     height: 100%;
@@ -130,8 +130,8 @@
 
 .aboutDiscordLink button {
     font-weight: var(--bold);
-    border:3px solid var(--green);
-    color: var(--green);
+    border:3px solid var(--pink);
+    color: var(--pink);
     padding:1em;
     font-size:1.2rem;
     background-color: transparent;
@@ -142,9 +142,9 @@
 }
 
 .aboutDiscordLink button:hover {
-    border:3px solid var(--greenHover);
-    background-color: var(--greenHover);
-    color: var(--background);
+    border:3px solid var(--fontColor);
+    background-color: var(--fontColor);
+    color: var(--pink);
 }
 
 .fadeInAboutBlurb {

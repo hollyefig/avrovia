@@ -18,7 +18,7 @@ body {
 
 .dark {
   --background: #2a2e25;
-  --secondaryColor: #21241e;
+  --secondaryColor: #1d1f1b;
   --fontColor: #ccccbf;
   --backdropFilter: blur(6px) grayscale(.6);
   --flowersBg: url(../src/assets/flowersBGDark.JPG);
