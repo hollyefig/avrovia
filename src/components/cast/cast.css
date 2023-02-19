@@ -165,3 +165,18 @@
     color: var(--fontColor);
 }
 
+.backButton > button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    border:2px solid var(--fontColor);
+    padding:10px 0;
+    font-weight: var(--bold);
+    color: var(--fontColor);
+    font-size: 1.2rem;
+}
+
