@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cast.css";
 
 export default function Castdisplay({ castSelected, currentChar, backButton }) {
+  useEffect(() => {
+    const keydown = (e) => {
+      if (e.key === "Escape") {
+        backButton();
+      }
+    };
+    window.addEventListener("keydown", keydown);
+    return () => {
+      window.removeEventListener("keydown", keydown);
+    };
+  }, [backButton]);
+
   return (
-    // <div
-    //   className='castDisplayWrapper'
-    //   style={castSelected ? { height: "100%" } : { height: "0%" }}
-    // >
     <div
       className={`castDisplayWrapper ${
         castSelected && "castDisplayWrapperHeight"
       }`}
+      style={
+        castSelected ? { transitionDelay: "1s" } : { transitionDelay: "0s" }
+      }
     >
       <div className='castDisplayGrid'>
         {currentChar && (

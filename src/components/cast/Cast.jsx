@@ -15,7 +15,6 @@ export default function Cast({ castRef, castVisible }) {
 
   const backButton = () => {
     setCastSelected(false);
-    setCurrentChar(null);
   };
 
   return (
