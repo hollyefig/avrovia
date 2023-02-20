@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./nav.css";
 
 export default function Nav({
@@ -9,6 +9,20 @@ export default function Nav({
   setTheme,
 }) {
   const navRef = useRef(null);
+  const [mobile, setMobile] = useState(false);
+
+  // determine mobile
+  useEffect(() => {
+    const resize = () => {
+      if (window.outerWidth <= 930) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+    window.addEventListener("resize", () => resize());
+    return () => window.removeEventListener("resize", () => resize());
+  }, []);
 
   // fade in nav
   setTimeout(() => {
@@ -18,13 +32,12 @@ export default function Nav({
   const [dropDown, setDropDown] = useState(false);
   const navDropdown = () => {
     dropDown ? setDropDown(false) : setDropDown(true);
-    console.log("dropdown", dropDown);
   };
   return (
     <div
       className={`navWrapper ${!headerVisible && "navBgColor"}`}
       ref={navRef}
-      onClick={navDropdown}
+      onClick={mobile && navDropdown}
     >
       <div className={`navLogoWrapper ${headerVisible ? null : "navLogoDrop"}`}>
         <div className='navLogo'></div>

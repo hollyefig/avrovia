@@ -152,6 +152,7 @@
         grid-template-rows: 70px 1fr;
         grid-template-columns: none;
         transition: grid-row .5s ease-out;
+        cursor: pointer;
     }
 
     .navWrapper {
@@ -181,5 +182,9 @@
     .navDropdownClick {
         padding: 1em 0;
         height: 20vh;
+    }
+
+    .navAbout::after, .navCast::after, .navMusic::after {
+        width: 20%;
     }
 }
