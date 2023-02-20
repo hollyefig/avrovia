@@ -13,7 +13,6 @@ function App() {
     [castVisible, setCastVisible] = useState(false);
 
   // theme setting
-  const [theme, setTheme] = useState("dark");
 
   const callBackFunc = (ent) => {
     if (ent[0].target.id === "headerWrapper") {
@@ -25,6 +24,9 @@ function App() {
     }
   };
 
+  const [mobile, setMobile] = useState(false);
+
+  // scroll
   useEffect(() => {
     const observer = new IntersectionObserver(callBackFunc, {
       root: null,
@@ -37,23 +39,39 @@ function App() {
     if (headerRef.current) observer.observe(headerRef.current);
     if (aboutRef.current) observer.observe(aboutRef.current);
     if (castRef.current) observer.observe(castRef.current);
+
+    const resize = () => {
+      if (window.outerWidth <= 930) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+    window.addEventListener("resize", () => resize());
+    if (window.outerWidth <= 930) {
+      setMobile(true);
+    }
     return () => {
       if (header) observer.unobserve(header);
       if (about) observer.unobserve(about);
       if (cast) observer.unobserve(cast);
+
+      window.removeEventListener("resize", () => resize());
+      if (window.outerWidth >= 930) {
+        setMobile(false);
+      }
     };
-  }, [headerRef, aboutRef, castRef]);
+  }, [headerRef, aboutRef, castRef, mobile]);
 
   return (
-    <div className={`App ${theme}`}>
+    <div className='App dark'>
       <Nav
         headerVisible={headerVisible}
         aboutVisible={aboutVisible}
         castVisible={castVisible}
-        theme={theme}
-        setTheme={setTheme}
         aboutRef={aboutRef}
         castRef={castRef}
+        mobile={mobile}
       />
       <div className='sections'>
         <Header headerRef={headerRef} headerVisible={headerVisible} />

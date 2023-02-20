@@ -1,30 +1,15 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import "./nav.css";
 
 export default function Nav({
   headerVisible,
   aboutVisible,
   castVisible,
-  theme,
-  setTheme,
   aboutRef,
   castRef,
+  mobile,
 }) {
   const navRef = useRef(null);
-  const [mobile, setMobile] = useState(false);
-
-  // determine mobile
-  useEffect(() => {
-    const resize = (() => {
-      if (window.outerWidth <= 930) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-      }
-    })();
-    window.addEventListener("resize", () => resize());
-    return () => window.removeEventListener("resize", () => resize());
-  }, []);
 
   // fade in nav
   setTimeout(() => {
@@ -53,7 +38,7 @@ export default function Nav({
     >
       <div
         className={`navLogoWrapper ${!headerVisible && "navLogoDrop"}`}
-        onClick={mobile && navDropdown}
+        onClick={mobile ? navDropdown : undefined}
       >
         <div className='navLogo'></div>
         <div className='navTitle'>A D&D Podcast</div>
@@ -77,11 +62,7 @@ export default function Nav({
         <div className='themeSwitch'>
           <span class='material-symbols-outlined'>light_mode</span>
           <span class='material-symbols-outlined'>dark_mode</span>
-          <div
-            className={`themeButton ${
-              theme === "light" ? "themeButtonSwitch" : null
-            }`}
-          ></div>
+          <div className='themeButton'></div>
         </div>
       </div>
     </div>
