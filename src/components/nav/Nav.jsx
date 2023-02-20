@@ -7,19 +7,21 @@ export default function Nav({
   castVisible,
   theme,
   setTheme,
+  aboutRef,
+  castRef,
 }) {
   const navRef = useRef(null);
   const [mobile, setMobile] = useState(false);
 
   // determine mobile
   useEffect(() => {
-    const resize = () => {
+    const resize = (() => {
       if (window.outerWidth <= 930) {
         setMobile(true);
       } else {
         setMobile(false);
       }
-    };
+    })();
     window.addEventListener("resize", () => resize());
     return () => window.removeEventListener("resize", () => resize());
   }, []);
@@ -29,23 +31,46 @@ export default function Nav({
     navRef.current.style.opacity = 1;
   }, 1500);
 
+  // dropdown settings
   const [dropDown, setDropDown] = useState(false);
   const navDropdown = () => {
     dropDown ? setDropDown(false) : setDropDown(true);
+  };
+
+  // scrolls
+  const clickAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    setDropDown(false);
+  };
+  const clickCast = () => {
+    castRef.current?.scrollIntoView({ behavior: "smooth" });
+    setDropDown(false);
   };
   return (
     <div
       className={`navWrapper ${!headerVisible && "navBgColor"}`}
       ref={navRef}
-      onClick={mobile && navDropdown}
     >
-      <div className={`navLogoWrapper ${headerVisible ? null : "navLogoDrop"}`}>
+      <div
+        className={`navLogoWrapper ${!headerVisible && "navLogoDrop"}`}
+        onClick={mobile && navDropdown}
+      >
         <div className='navLogo'></div>
         <div className='navTitle'>A D&D Podcast</div>
       </div>
       <div className={`navDropdown ${dropDown && "navDropdownClick"}`}>
-        <div className={`navAbout ${aboutVisible && "active"}`}>About</div>
-        <div className={`navCast ${castVisible && "active"}`}>Cast</div>
+        <div
+          className={`navAbout ${aboutVisible && "active"}`}
+          onClick={clickAbout}
+        >
+          About
+        </div>
+        <div
+          className={`navCast ${castVisible && "active"}`}
+          onClick={clickCast}
+        >
+          Cast
+        </div>
         <div className='navMusic'>Music</div>
       </div>
       <div className='themeSwitchWrapper'>

@@ -52,6 +52,8 @@ function App() {
         castVisible={castVisible}
         theme={theme}
         setTheme={setTheme}
+        aboutRef={aboutRef}
+        castRef={castRef}
       />
       <div className='sections'>
         <Header headerRef={headerRef} headerVisible={headerVisible} />
