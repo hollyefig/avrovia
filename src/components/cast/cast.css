@@ -96,7 +96,7 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    color: var(--secondaryColor);
+    color: var(--darkPink);
     font-family: var(--displayFont);
     font-weight: var(--bold);
     font-size: 4vw;
@@ -156,7 +156,7 @@
     background-color: var(--secondaryColor);
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr) 1.5fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr) 1.5fr 1fr 45px 1fr;
     padding:1em 1em 1em 2em;
     background-image: url(../../assets/goldDust.png);
     background-repeat: no-repeat;
@@ -202,9 +202,15 @@
     margin:.5em 0 0 0;
 }
 
+.displaySocial {
+    grid-row: 5 / 6;
+    font-size: .8rem;
+    font-style: italic;
+}
+
 .backButton {
     grid-column: 1 / 4;
-    grid-row: 5 / 6;
+    grid-row: 6 / 7;
     display: flex;
     justify-content: center;
     align-items: center;

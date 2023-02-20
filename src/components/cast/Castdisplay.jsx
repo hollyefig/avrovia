@@ -51,6 +51,22 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
                   Player's Notes:
                   <p>{currentChar.playersNotes}</p>
                 </div>
+                <div className='displaySocial'>
+                  {currentChar.artist && currentChar.artistName && (
+                    <>
+                      Artist:
+                      <p>
+                        <a
+                          href={currentChar.artist}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          {currentChar.artistName}
+                        </a>
+                      </p>
+                    </>
+                  )}
+                </div>
                 <div className='backButton'>
                   <button type='button' onClick={backButton}>
                     Back

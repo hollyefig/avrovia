@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./nav.css";
 
 export default function Nav({
@@ -15,23 +15,28 @@ export default function Nav({
     navRef.current.style.opacity = 1;
   }, 1500);
 
-  const buttonSwitch = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+  const [dropDown, setDropDown] = useState(false);
+  const navDropdown = () => {
+    dropDown ? setDropDown(false) : setDropDown(true);
+    console.log("dropdown", dropDown);
   };
   return (
     <div
-      className={`navWrapper ${headerVisible ? null : "navBgColor"}`}
+      className={`navWrapper ${!headerVisible && "navBgColor"}`}
       ref={navRef}
+      onClick={navDropdown}
     >
       <div className={`navLogoWrapper ${headerVisible ? null : "navLogoDrop"}`}>
         <div className='navLogo'></div>
         <div className='navTitle'>A D&D Podcast</div>
       </div>
-      <div className={`navAbout ${aboutVisible ? "active" : null}`}>About</div>
-      <div className={`navCast ${castVisible ? "active" : null}`}>Cast</div>
-      <div className='navMusic'>Music</div>
+      <div className={`navDropdown ${dropDown && "navDropdownClick"}`}>
+        <div className={`navAbout ${aboutVisible && "active"}`}>About</div>
+        <div className={`navCast ${castVisible && "active"}`}>Cast</div>
+        <div className='navMusic'>Music</div>
+      </div>
       <div className='themeSwitchWrapper'>
-        <div className='themeSwitch' onClick={buttonSwitch}>
+        <div className='themeSwitch'>
           <span class='material-symbols-outlined'>light_mode</span>
           <span class='material-symbols-outlined'>dark_mode</span>
           <div

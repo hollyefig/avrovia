@@ -61,3 +61,21 @@
 .headerTitleFadeIn {
     opacity: 1;
 }
+
+@media only screen and (max-width:930px) {
+    .logoWrapper {
+        width: 90%;
+        height: 40vh;
+        min-height: 220px;
+    }
+    .headerTitle {
+        font-size:calc(12px + 2.5vw);
+    }
+}
+
+@media only screen and (max-width:425px) {
+    .logoWrapper {
+        min-height: 180px;
+    }
+
+}
