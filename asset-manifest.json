@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.023bb1f9.css",
-    "main.js": "/avrovia/static/js/main.ce0e4de5.js",
-    "static/media/bgTexture.png": "/avrovia/static/media/bgTexture.10a0c9e0871873557998.png",
+    "main.css": "/avrovia/static/css/main.aa7b66e8.css",
+    "main.js": "/avrovia/static/js/main.37dd7f9e.js",
     "static/media/anya.PNG": "/avrovia/static/media/anya.dd7956bfef6c5ac5d8e4.PNG",
-    "static/media/flowersBGLight.JPG": "/avrovia/static/media/flowersBGLight.b7748681321ba27ff6fb.JPG",
     "static/media/logoDark.png": "/avrovia/static/media/logoDark.e2dcda925be2ea00c9a0.png",
-    "static/media/logoLight.png": "/avrovia/static/media/logoLight.ee7039fd26ff8f0b679f.png",
+    "static/media/ilvaaj.png": "/avrovia/static/media/ilvaaj.2661bab7a57505b5697f.png",
     "static/media/flowersBGDark.JPG": "/avrovia/static/media/flowersBGDark.cbee8f05b22c1505ec77.JPG",
+    "static/media/bgTexture.png": "/avrovia/static/media/bgTexture.eb405629b6b0debbdf09.png",
+    "static/media/myth.jpeg": "/avrovia/static/media/myth.70aedc3da60627799a26.jpeg",
     "static/media/flowersClip.png": "/avrovia/static/media/flowersClip.9ceb2dcc5648d5e8c4b3.png",
     "static/media/goldDust.png": "/avrovia/static/media/goldDust.60100e784d0c1321660c.png",
     "static/media/goldFrame.png": "/avrovia/static/media/goldFrame.27bfbbb3560b266679d4.png",
+    "static/media/ashar.png": "/avrovia/static/media/ashar.456b6292866218c0f40e.png",
     "static/media/d20.svg": "/avrovia/static/media/d20.788bd86f7121621767f53a06430866bf.svg",
     "index.html": "/avrovia/index.html",
-    "main.023bb1f9.css.map": "/avrovia/static/css/main.023bb1f9.css.map",
-    "main.ce0e4de5.js.map": "/avrovia/static/js/main.ce0e4de5.js.map"
+    "main.aa7b66e8.css.map": "/avrovia/static/css/main.aa7b66e8.css.map",
+    "main.37dd7f9e.js.map": "/avrovia/static/js/main.37dd7f9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.023bb1f9.css",
-    "static/js/main.ce0e4de5.js"
+    "static/css/main.aa7b66e8.css",
+    "static/js/main.37dd7f9e.js"
   ]
 }
