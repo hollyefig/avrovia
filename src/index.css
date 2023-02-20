@@ -13,7 +13,10 @@ body {
   --bold: 700;
   --regular: 400;
   --h1: 3.5rem;
+  --subheader: 2rem;
   --dark: #212937;
+  --pink:#f14f7e;
+  --darkPink:#b42a51;
 }
 
 .dark {
@@ -23,20 +26,6 @@ body {
   --backdropFilter: blur(6px) grayscale(.6);
   --flowersBg: url(../src/assets/flowersBGDark.JPG);
   --logo: url(../src/assets/logoDark.png);
-  --pink:#f14f7e;
-  --green:#5b8e4f;
-  --greenHover:#72c54b;
-  --textShadow: 4px 4px 0px var(--secondaryColor);
-}
-
-.light {
-  --background: #ccccbf;
-  --secondaryColor: #b4b7a3;
-  --fontColor: #212937;
-  --backdropFilter: blur(6px) sepia(.6);
-  --flowersBg: url(../src/assets/flowersBGLight.JPG);
-  --logo: url(../src/assets/logoLight.png);
-  --pink:#ae576b;
   --green:#5b8e4f;
   --greenHover:#72c54b;
   --textShadow: 4px 4px 0px var(--secondaryColor);
@@ -48,13 +37,13 @@ code {
 }
 
 body a {
-  color: var(--green);
+  color: var(--pink);
   text-decoration: none;
   transition: color .3s ease-out;
 }
 
 body a:hover {
-  color: var(--greenHover);
+  color: var(--fontColor);
 }
 
 .App {
@@ -77,4 +66,11 @@ body a:hover {
   scroll-snap-align: start;
   scroll-behavior: smooth;
   height:100vh;
+}
+
+@media only screen and (max-width:600px) {
+    body {
+      --h1: clamp(2rem, 4vw, 22px);
+      --subheader: clamp(1.5rem, 2vw, 22px);;
+    }
 }

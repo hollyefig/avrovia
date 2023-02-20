@@ -22,9 +22,6 @@ export default function About({ aboutRef, aboutVisible }) {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
             debitis excepturi architecto ipsum, aliquid quia autem nam, cum
             aspernatur facere accusantium illo pariatur ex in dolor animi quae?
-            Eius, eligendi illum at dolores doloribus assumenda vitae magni
-            quisquam accusantium odio esse ullam nihil consequatur, officia,
-            nobis doloremque dolorem quae provident?
           </div>
           <div className='aboutDiscordLink'>
             <button type='button'>Join Our Discord</button>

@@ -117,7 +117,7 @@
 }
 
 .aboutSubheader {
-    font-size:2rem;
+    font-size:var(--subheader);
     font-weight: var(--bold);
     color: var(--pink);
 }
@@ -150,3 +150,41 @@
 .fadeInAboutBlurb {
     opacity: 1;
 }
+
+@media only screen and (max-width:930px) {
+
+    .aboutWrapper {
+        background-size: 200vw;
+        background-position: left -20vw center;
+    }
+
+    .aboutCopy {
+        grid-template-rows: none;
+        grid-template-columns: none;
+    }
+
+    .d20 {
+    display: none;
+    }
+
+    .aboutBlurb {
+        grid-row: 2 / 3;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        background-color: var(--background);
+        background-image: none;
+    
+    }
+
+}
+
+@media only screen and (max-width:425px) {
+
+    .aboutWrapper {
+        padding:.3em;
+    }
+}
+
