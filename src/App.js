@@ -6,7 +6,7 @@ import Cast from "./components/cast/Cast";
 
 function App() {
   const headerRef = useRef(null),
-    [headerVisible, setHeaderVisible] = useState(false),
+    [headerVisible, setHeaderVisible] = useState(true),
     aboutRef = useRef(null),
     [aboutVisible, setAboutVisible] = useState(false),
     castRef = useRef(null),

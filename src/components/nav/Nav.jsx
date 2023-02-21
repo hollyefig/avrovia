@@ -12,9 +12,6 @@ export default function Nav({
   const navRef = useRef(null);
 
   // fade in nav
-  setTimeout(() => {
-    navRef.current.style.opacity = 1;
-  }, 1500);
 
   // dropdown settings
   const [dropDown, setDropDown] = useState(false);

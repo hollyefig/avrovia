@@ -10,6 +10,19 @@
     display: grid;
     grid-template-columns: 3fr 2fr 3fr;
     opacity: 0;
+    animation: navFadeIn .7s ease-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navFadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+    
 }
 
 .navBgColor {

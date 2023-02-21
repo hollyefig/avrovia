@@ -9,19 +9,9 @@ export default function Header({ headerRef, headerVisible }) {
       ref={headerRef}
     >
       <div className='backdropFilter'>
-        <div
-          className={`logoWrapper ${
-            headerVisible ? "logoWrapperFadeIn" : null
-          }`}
-        >
+        <div className='logoWrapper'>
           <div className='logo'></div>
-          <div
-            className={`headerTitle ${
-              headerVisible ? "headerTitleFadeIn" : null
-            }`}
-          >
-            A D&D Podcast
-          </div>
+          <div className='headerTitle'>A D&D Podcast</div>
         </div>
       </div>
     </div>
