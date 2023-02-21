@@ -3,6 +3,7 @@ import Nav from "./components/nav/Nav";
 import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Cast from "./components/cast/Cast";
+import Music from "./components/music/Music";
 
 function App() {
   const headerRef = useRef(null),
@@ -76,7 +77,8 @@ function App() {
       <div className='sections'>
         <Header headerRef={headerRef} headerVisible={headerVisible} />
         <About aboutRef={aboutRef} aboutVisible={aboutVisible} />
-        <Cast castRef={castRef} castVisible={castVisible} />
+        <Cast castRef={castRef} castVisible={castVisible} mobile={mobile} />
+        <Music />
       </div>
     </div>
   );

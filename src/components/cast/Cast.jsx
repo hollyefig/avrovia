@@ -4,7 +4,7 @@ import Castcard from "./Castcard";
 import { castData } from "../../castData";
 import Castdisplay from "./Castdisplay";
 
-export default function Cast({ castRef, castVisible }) {
+export default function Cast({ castRef, castVisible, mobile }) {
   const [castSelected, setCastSelected] = useState(false),
     [currentChar, setCurrentChar] = useState();
 
@@ -21,7 +21,7 @@ export default function Cast({ castRef, castVisible }) {
     <div className='castWrapper scrollSnap' id='castWrapper' ref={castRef}>
       <div
         className={`castContainer ${castVisible && "castContainerFadeIn"} ${
-          castSelected && "slideUp"
+          castSelected ? "fadeOut" : "fadeIn"
         }`}
       >
         <div className='castTitle'>

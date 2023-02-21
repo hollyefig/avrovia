@@ -20,7 +20,7 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
         castSelected && "castDisplayWrapperHeight"
       }`}
       style={
-        castSelected ? { transitionDelay: "1s" } : { transitionDelay: "0s" }
+        castSelected ? { transitionDelay: ".5s" } : { transitionDelay: "0s" }
       }
     >
       <div className='castDisplayGrid'>

@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+  min-height: -webkit-fill-available;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --displayFont: 'Yeseva One', cursive;
@@ -17,6 +22,7 @@ body {
   --dark: #212937;
   --pink:#f14f7e;
   --darkPink:#b42a51;
+  --navHeight: 6em;
 }
 
 .dark {
@@ -56,7 +62,7 @@ body a:hover {
 
 .sections {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
   position: relative;
@@ -65,12 +71,18 @@ body a:hover {
 .scrollSnap {
   scroll-snap-align: start;
   scroll-behavior: smooth;
-  height:100vh;
+  padding: var(--navHeight) 0 0 0;
+  /* height:100vh; */
+}
+
+div > .scrollSnap:first-child {
+  padding:0 0 0 0;
 }
 
 @media only screen and (max-width:600px) {
     body {
       --h1: clamp(2rem, 4vw, 22px);
-      --subheader: clamp(1.5rem, 2vw, 22px);;
+      --subheader: clamp(1.5rem, 2vw, 22px);
+      --navHeight: 65px;
     }
 }
