@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.635da1fc.css",
-    "main.js": "/avrovia/static/js/main.1f789fc2.js",
+    "main.css": "/avrovia/static/css/main.f0592965.css",
+    "main.js": "/avrovia/static/js/main.cc5b72bc.js",
     "static/media/anya.PNG": "/avrovia/static/media/anya.dd7956bfef6c5ac5d8e4.PNG",
+    "static/media/musicBg.jpg": "/avrovia/static/media/musicBg.5030b818c9f2d6708cb0.jpg",
     "static/media/logoDark.png": "/avrovia/static/media/logoDark.e2dcda925be2ea00c9a0.png",
     "static/media/ilvaaj.png": "/avrovia/static/media/ilvaaj.2661bab7a57505b5697f.png",
     "static/media/flowersBGDark.JPG": "/avrovia/static/media/flowersBGDark.cbee8f05b22c1505ec77.JPG",
@@ -14,11 +15,11 @@
     "static/media/ashar.png": "/avrovia/static/media/ashar.456b6292866218c0f40e.png",
     "static/media/d20.svg": "/avrovia/static/media/d20.788bd86f7121621767f53a06430866bf.svg",
     "index.html": "/avrovia/index.html",
-    "main.635da1fc.css.map": "/avrovia/static/css/main.635da1fc.css.map",
-    "main.1f789fc2.js.map": "/avrovia/static/js/main.1f789fc2.js.map"
+    "main.f0592965.css.map": "/avrovia/static/css/main.f0592965.css.map",
+    "main.cc5b72bc.js.map": "/avrovia/static/js/main.cc5b72bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.635da1fc.css",
-    "static/js/main.1f789fc2.js"
+    "static/css/main.f0592965.css",
+    "static/js/main.cc5b72bc.js"
   ]
 }
