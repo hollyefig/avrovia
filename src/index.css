@@ -69,7 +69,7 @@ body a:hover {
 }
 
 .scrollSnap {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-behavior: smooth;
   padding: var(--navHeight) 0 0 0;
   /* height:100vh; */

@@ -32,40 +32,47 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
             </div>
             <div className='castInfo'>
               <div className='castInfoDiv'>
-                <div className='goldFrame'></div>
-                <div className='displayName'>{currentChar.name}</div>
-                <div className='displayRace'>
-                  Race:
-                  <h3>{currentChar.race}</h3>
-                </div>
-                <div className='displayClass'>
-                  Class:
-                  <h3>{currentChar.class}</h3>
-                </div>
-                <div className='displayAlignment'>
-                  Alignment:
-                  <h3>{currentChar.alignment}</h3>
-                </div>
-                <div className='displayAbout'>{currentChar.about}</div>
-                <div className='displayPlayerNotes'>
-                  Player's Notes:
-                  <p>{currentChar.playersNotes}</p>
-                </div>
-                <div className='displaySocial'>
-                  {currentChar.artist && currentChar.artistName && (
-                    <>
-                      Artist:
-                      <p>
-                        <a
-                          href={currentChar.artist}
-                          target='_blank'
-                          rel='noreferrer'
-                        >
-                          {currentChar.artistName}
-                        </a>
-                      </p>
-                    </>
-                  )}
+                <div className='castInfoGrid'>
+                  <div className='goldFrame'></div>
+                  <div className='displayName'>{currentChar.name}</div>
+                  <div className='castImgMobile'>
+                    <img src={currentChar.art} alt={currentChar.name} />
+                  </div>
+                  <div className='charDetailsGrid'>
+                    <div className='displayRace'>
+                      Race:
+                      <h3>{currentChar.race}</h3>
+                    </div>
+                    <div className='displayClass'>
+                      Class:
+                      <h3>{currentChar.class}</h3>
+                    </div>
+                    <div className='displayAlignment'>
+                      Alignment:
+                      <h3>{currentChar.alignment}</h3>
+                    </div>
+                  </div>
+                  <div className='displayAbout'>{currentChar.about}</div>
+                  <div className='displayPlayerNotes'>
+                    Player's Notes:
+                    <p>{currentChar.playersNotes}</p>
+                  </div>
+                  <div className='displaySocial'>
+                    {currentChar.artist && currentChar.artistName && (
+                      <>
+                        Artist:
+                        <p>
+                          <a
+                            href={currentChar.artist}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            {currentChar.artistName}
+                          </a>
+                        </p>
+                      </>
+                    )}
+                  </div>
                 </div>
                 <div className='backButton'>
                   <button type='button' onClick={backButton}>
