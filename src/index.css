@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   height: -webkit-fill-available;
-}
+} */
 
 body {
   font-family: 'Montserrat', sans-serif;
-  min-height: -webkit-fill-available;
+  /* min-height: -webkit-fill-available; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --displayFont: 'Yeseva One', cursive;
@@ -62,7 +62,7 @@ body a:hover {
 
 .sections {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
   position: relative;

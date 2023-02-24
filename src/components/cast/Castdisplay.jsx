@@ -9,6 +9,7 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
       }
     };
     window.addEventListener("keydown", keydown);
+
     return () => {
       window.removeEventListener("keydown", keydown);
     };
@@ -32,7 +33,7 @@ export default function Castdisplay({ castSelected, currentChar, backButton }) {
             </div>
             <div className='castInfo'>
               <div className='castInfoDiv'>
-                <div className='castInfoGrid'>
+                <div className='castInfoGrid' id='castInfoGrid'>
                   <div className='goldFrame'></div>
                   <div className='displayName'>{currentChar.name}</div>
                   <div className='castImgMobile'>

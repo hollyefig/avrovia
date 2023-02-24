@@ -85,7 +85,7 @@
 .castTitle > h1 {
     font-family: var(--displayFont);
     text-shadow: var(--textShadow);
-    font-size: var(--h1);
+    font-size: clamp(3rem, var(--h1), 4vw);
 }
 
 .characterWrapper {
@@ -151,7 +151,7 @@
     color: var(--darkPink);
     font-family: var(--displayFont);
     font-weight: var(--bold);
-    font-size: 4vw;
+    font-size: clamp(3rem, 4vw, 4vw);
     opacity: 0;
     transition: opacity .5s ease-out;
 }
@@ -226,6 +226,7 @@
 
 .castInfoGrid > div {
     padding:.5em 0;
+    column-gap: 10px;
 }
 
 .goldFrame {
@@ -344,6 +345,14 @@
         height: auto;
     }
 
+    .charDetailsGrid h3 {
+        font-size: 1rem;
+    }
+
+    .displayAbout {
+        font-size: .9rem;
+    }
+
 }
 
 @media only screen and (max-width:425px) {
@@ -357,7 +366,8 @@
 
     .charDetailsGrid > div {
         padding:.5em 0;
-    }
+    } 
+    
     
 }
 
