@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'abhaya_librebold';
+    src: url('./assets/abhaya-libre-fontfacekit/AbhayaLibre-Bold-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --lightWhite: #D9D9D9;
+    --mediumWhite: #D2D2D2;
+    --darkWhite: #CDCCCC;
+    --gold: #C09A61;
+    --pink: #DA7F90;
+    --green: #52523A;
+    --brown: #2E2420;
+    --displayFont: 'abhaya_librebold';
+    --copyFont: "Lato", sans-serif;
+    --fontBlack: 900;
+    --fontBold: 700;
+    --fontReg: 400;
+}
+
+body {
+    background-color: var(--lightWhite);
+}
