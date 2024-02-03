@@ -18,6 +18,7 @@
     --fontBlack: 900;
     --fontBold: 700;
     --fontReg: 400;
+    --maxWidth: 1080px;
 }
 
 * {
@@ -28,4 +29,11 @@
 
 body {
     background-color: var(--lightWhite);
+}
+
+.fontBlack {
+    font-weight: var(--fontBlack);
+}
+.fontBold {
+    font-weight: var(--fontBold);
 }

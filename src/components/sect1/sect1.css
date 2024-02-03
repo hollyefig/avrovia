@@ -1,0 +1,21 @@
+.sect1Wrap {
+    border:1px solid red;
+    max-width: var(--maxWidth);
+    font-family: var(--copyFont);
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.countdownWrap {
+    border-radius: 40px;
+    background: var(--pink);
+    padding:.5em;
+    width: max-content;
+    display: grid;
+    grid-template-columns: min-content max-content;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--lightWhite);
+}
