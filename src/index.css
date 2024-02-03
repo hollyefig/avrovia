@@ -1,88 +1,13 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-/* html {
-  height: -webkit-fill-available;
-} */
-
 body {
-  font-family: 'Montserrat', sans-serif;
-  /* min-height: -webkit-fill-available; */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --displayFont: 'Yeseva One', cursive;
-  --copyFont: 'Montserrat', sans-serif;
-  --bold: 700;
-  --regular: 400;
-  --h1: 3.5rem;
-  --subheader: 2rem;
-  --dark: #212937;
-  --pink:#f14f7e;
-  --darkPink:#b42a51;
-  --navHeight: 6em;
-}
-
-.dark {
-  --background: #2a2e25;
-  --secondaryColor: #181a16;
-  --fontColor: #ccccbf;
-  --backdropFilter: blur(6px) grayscale(.6);
-  --flowersBg: url(../src/assets/flowersBGDark.JPG);
-  --logo: url(../src/assets/logoDark.png);
-  --green:#5b8e4f;
-  --greenHover:#72c54b;
-  --textShadow: 4px 4px 0px var(--secondaryColor);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-body a {
-  color: var(--pink);
-  text-decoration: none;
-  transition: color .3s ease-out;
-}
-
-body a:hover {
-  color: var(--fontColor);
-}
-
-.App {
-  height: auto;
-  width: 100%;
-  background-color: var(--background);
-  color: var(--fontColor);
-  position: relative;
-}
-
-.sections {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  position: relative;
-}
-
-.scrollSnap {
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
-  padding: var(--navHeight) 0 0 0;
-  /* height:100vh; */
-}
-
-div > .scrollSnap:first-child {
-  padding:0 0 0 0;
-}
-
-@media only screen and (max-width:600px) {
-    body {
-      --h1: clamp(2rem, 4vw, 22px);
-      --subheader: clamp(1.5rem, 2vw, 22px);
-      --navHeight: 65px;
-    }
 }
