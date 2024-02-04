@@ -9,7 +9,6 @@
 
 
 .subheadWrap {
-    
     width: 100%;
     height: 100%;
     display: grid;
@@ -25,4 +24,17 @@
     border: 1.5px solid var(--lightWhite);
     padding: .5em 1em;
     font-size: 22px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .headerWrap {
+        background-image: url('../../assets/images/headerBgMobile.jpg');
+    }
+
+    .subhead {
+        
+        padding: .5em 1em;
+        font-size: 18px;
+    }
 }

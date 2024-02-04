@@ -28,21 +28,54 @@ export default function Countdown() {
     setCountdown({ days, hours, minutes, seconds });
   };
 
+  // ? countdown
   const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: null,
+    hours: null,
+    minutes: null,
+    seconds: null,
   });
 
+  // ? determine session is live
+  const [inSession, setInSession] = useState(false);
+
+  // ? get timezone
+  const timezone = Intl.DateTimeFormat()
+    .resolvedOptions()
+    .timeZone.replace("_", " ");
+
+  // * useEffect
   useEffect(() => {
     const intervalId = setInterval(calculateCountdown, 1000);
+    setInSession(countdown.days === 0 && countdown.seconds === 0);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []); // Run the effect once when the component mounts
+  }, [countdown, setInSession]); // Run the effect once when the component mounts
 
   return (
-    <>{`${countdown.days} days, ${countdown.hours} hrs, ${countdown.minutes} m, ${countdown.seconds} s`}</>
+    <>
+      {countdown.days !== null ? (
+        <>
+          {inSession ? (
+            <span className='fontBold'>Session in Progress</span>
+          ) : (
+            <>
+              <span className='fontBold'>
+                {`${countdown.days} ${countdown.days === 1 ? "day" : "days"}, ${
+                  countdown.hours
+                } hrs, ${countdown.minutes}
+          m, ${countdown.seconds} s`}{" "}
+              </span>
+              <em>until next session | {timezone}</em>
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <em>loading countdown</em>
+        </>
+      )}
+    </>
   );
 }
