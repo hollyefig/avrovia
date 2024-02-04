@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import gsap from "gsap";
 import { data } from "../../data";
 import "./sect2.css";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Sect2() {
   const cast = data.cast;
-
+  // current character
   const [char, setChar] = useState(null);
 
+  // ! open a card
   const openCard = (e) => {
     setChar(e);
-
     gsap
       .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
-      .to(".charDisplay", { height: "auto" })
+      .to(window, {
+        scrollTo: { y: ".sect2Wrap" },
+      })
+      .to(".charDisplay", { height: "auto" }, "<.3")
       .from(".charGrid", { opacity: 0 });
   };
 
