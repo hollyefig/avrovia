@@ -9,21 +9,21 @@ export default function Sect2() {
   const [char, setChar] = useState(null);
 
   const openCard = (e) => {
-    char &&
-      gsap
-        .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
-        .to(".charDisplay", { height: "auto" })
-        .from(".charGrid", { opacity: 0 });
     setChar(e);
+
+    gsap
+      .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
+      .to(".charDisplay", { height: "auto" })
+      .from(".charGrid", { opacity: 0 });
   };
 
   return (
     <div className='sect2Wrap'>
       <span className='green uppercase displayLarge largeSubhead'>Cast</span>
       <div className='charDisplay'>
-        {char && (
-          <div className='charGrid'>
-            <div className='charCopyWrap'>
+        <div className='charGrid'>
+          <div className='charCopyWrap'>
+            {char && (
               <div className='charCopy'>
                 <span className='charSpecs'>
                   <p className='pink displayFont displayMedium uppercase charName'>
@@ -47,13 +47,15 @@ export default function Sect2() {
                   <p>{char.playersNotes}</p>
                 </div>
               </div>
-            </div>
+            )}
+          </div>
+          {char && (
             <div
               className='charPhoto'
               style={{ backgroundImage: `url(${char.art})` }}
             ></div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       {/* end char display  */}
       <div className='charCardsWrap'>
