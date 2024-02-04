@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.9eb8f272.css",
+    "main.css": "/avrovia/static/css/main.9519bb99.css",
     "main.js": "/avrovia/static/js/main.b7353e8c.js",
     "static/media/sect2Bg.jpg": "/avrovia/static/media/sect2Bg.33d618c1b75049fbb0ed.jpg",
     "static/media/headerBgMobile.jpg": "/avrovia/static/media/headerBgMobile.1f87908e77262d12ae71.jpg",
@@ -15,11 +15,11 @@
     "static/media/cardWizard.png": "/avrovia/static/media/cardWizard.346d72399b989f000b71.png",
     "static/media/AbhayaLibre-Bold-webfont.woff": "/avrovia/static/media/AbhayaLibre-Bold-webfont.329e62fa42cfb1f9b2bf.woff",
     "index.html": "/avrovia/index.html",
-    "main.9eb8f272.css.map": "/avrovia/static/css/main.9eb8f272.css.map",
+    "main.9519bb99.css.map": "/avrovia/static/css/main.9519bb99.css.map",
     "main.b7353e8c.js.map": "/avrovia/static/js/main.b7353e8c.js.map"
   },
   "entrypoints": [
-    "static/css/main.9eb8f272.css",
+    "static/css/main.9519bb99.css",
     "static/js/main.b7353e8c.js"
   ]
 }
