@@ -166,6 +166,13 @@
 
 @media only screen and (max-width: 425px) {
 
+    .charCardsWrap {
+        width: 100%;
+        grid-template-columns: repeat(6, 150px);
+        gap: 5%;
+        overflow-x: scroll;
+    }
+
     .charPhoto {      
         background-size: cover;        
     }
