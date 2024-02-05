@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { data } from "../../data";
 import "./sect2.css";
@@ -9,6 +9,7 @@ export default function Sect2() {
   const cast = data.cast;
   // current character
   const [char, setChar] = useState(null);
+  const gridRef = useRef(null);
 
   // ! open a card
   const openCard = (e) => {
@@ -19,14 +20,31 @@ export default function Sect2() {
         scrollTo: { y: ".sect2Wrap" },
       })
       .to(".charDisplay", { height: "auto" }, "<.3")
-      .from(".charGrid", { opacity: 0 });
+      .to(".charGrid", { opacity: 1 });
   };
+
+  useEffect(() => {
+    const keypress = (e) => {
+      if (e.key === "Escape") {
+        gsap
+          .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
+          .to(".charGrid", { opacity: 0 })
+          .to(".charDisplay", { height: "0px" });
+      }
+    };
+
+    document.addEventListener("keydown", (e) => keypress(e));
+
+    return () => {
+      document.removeEventListener("keydown", (e) => keypress(e));
+    };
+  }, []);
 
   return (
     <div className='sect2Wrap'>
       <span className='green uppercase displayLarge largeSubhead'>Cast</span>
       <div className='charDisplay'>
-        <div className='charGrid'>
+        <div className='charGrid' ref={gridRef}>
           <div className='charCopyWrap'>
             {char && (
               <div className='charCopy'>

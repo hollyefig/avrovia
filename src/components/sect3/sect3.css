@@ -1,0 +1,53 @@
+.sect3Bg {
+    background-image: url('../../assets/images/sect3Bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.5em;
+}
+
+.sect3Flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: var(--lightWhite);
+    padding: 20px 5%;
+}
+
+.sect3Flex > div {
+    flex: 1;
+}
+
+.sect3Left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.sect3Right {
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.song {
+    width: 100%;
+    display: grid;
+    grid-template-columns: min-content min-content max-content auto;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.songNum {
+    opacity: .5;
+}
+
+.songLength {
+    display: flex;
+    justify-content: flex-end;
+    font-style: italic;
+}
+
