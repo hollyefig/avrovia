@@ -3,7 +3,9 @@ import gsap from "gsap";
 import { data } from "../../data";
 import "./sect2.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Sect2() {
   // ? character
@@ -23,8 +25,17 @@ export default function Sect2() {
       .to(".charGrid", { opacity: 1 });
   };
 
+  const closeCard = () => {
+    console.log("close");
+    gsap
+      .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
+      .to(".charGrid", { opacity: 0 })
+      .to(".charDisplay", { height: "0px" });
+  };
+
   // * useEffect
   useEffect(() => {
+    // ? close by esc
     const keypress = (e) => {
       if (e.key === "Escape") {
         gsap
@@ -33,6 +44,18 @@ export default function Sect2() {
           .to(".charDisplay", { height: "0px" });
       }
     };
+
+    gsap.to(".charCardsWrap", {
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+      bottom: 0,
+      scrollTrigger: {
+        trigger: ".charCardsWrap > img:first-child",
+        start: "center bottom",
+        // markers: true,
+      },
+    });
 
     document.addEventListener("keydown", (e) => keypress(e));
 
@@ -69,6 +92,9 @@ export default function Sect2() {
                 <div className='playerNotes copyFont green'>
                   <p className='fontBold'>Player’s Notes</p>
                   <p>{char.playersNotes}</p>
+                </div>
+                <div className='closeCard pink copyDefault' onClick={closeCard}>
+                  close
                 </div>
               </div>
             )}
