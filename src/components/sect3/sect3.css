@@ -22,7 +22,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
     row-gap: 10px;
+    width: 100%;
+    max-width: 425px;
 }
 
 .sect3Right {
@@ -30,21 +39,41 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 29px;
 }
 
 .song {
     width: 100%;
     display: grid;
-    grid-template-columns: min-content min-content max-content auto;
+    grid-template-columns: 15px min-content max-content auto;
     column-gap: 10px;
     cursor: pointer;
+}
+
+.songPlaying {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activeSong {
+    width: 8px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--lightWhite);
+    border-radius: 100em;
+    box-shadow: 0px 0px 5px #fff;
+    opacity: 0;
+    transition: opacity .3s ease-out;
 }
 
 .songNum {
     opacity: .5;
 }
 
+.songName {
+    transition: text-shadow .3s ease-out;
+    opacity: .8;
+}
 .songLength {
     display: flex;
     justify-content: flex-end;

@@ -5,21 +5,23 @@ import ReactAudioPlayer from "react-audio-player";
 
 export default function Sect3() {
   const [track, setTrack] = useState();
-
+  // ? set song
   const songSelect = (e) => {
     setTrack(e);
   };
-  console.log(track);
+
   return (
     <div className='sect2Wrap'>
       <span className='green uppercase displayLarge largeSubhead'>Music</span>
       <div className='sect3Bg'>
         <div className='sect3Flex'>
           <div className='sect3Left'>
-            <span className='songTitle displayFont displaySmall'>
-              {track && track.name}
-            </span>
-            <ReactAudioPlayer src={track && track.mp3} autoPlay controls />
+            <div className='player'>
+              <span className='songTitle displayFont displaySmall'>
+                {track ? track.name : <>-</>}
+              </span>
+              <ReactAudioPlayer src={track && track.mp3} autoPlay controls />
+            </div>
           </div>
           <div className='sect3Right'>
             {musicData.map((e, index) => {
@@ -30,10 +32,28 @@ export default function Sect3() {
                   key={e.name}
                   onClick={() => songSelect(e)}
                 >
-                  <span className='songPlaying'></span>
+                  <span className='songPlaying'>
+                    <div
+                      className='activeSong'
+                      style={
+                        track !== undefined && track.name === e.name
+                          ? { opacity: "1" }
+                          : {}
+                      }
+                    ></div>
+                  </span>
                   <span className='songNum'>{num < 10 ? `0${num}` : num}</span>
-                  <span className='songName'>{e.name}</span>
-                  <span className='songLength'>3:11</span>
+                  <span
+                    className='songName'
+                    style={
+                      track !== undefined && track.name === e.name
+                        ? { textShadow: "0px 0px 8px #ffffff", opacity: "1" }
+                        : {}
+                    }
+                  >
+                    {e.name}
+                  </span>
+                  <span className='songLength'></span>
                 </div>
               );
             })}
