@@ -160,7 +160,10 @@
     .charGrid {
         display: flex;
         flex-direction: column-reverse;
+    }
 
+    .charCardsWrap > img:hover {
+        transform: none;
     }
 
 }

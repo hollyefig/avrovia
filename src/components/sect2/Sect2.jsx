@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { data } from "../../data";
 import "./sect2.css";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Sect2() {
+  // ? character
   const cast = data.cast;
-  // current character
   const [char, setChar] = useState(null);
   const gridRef = useRef(null);
 
@@ -23,6 +23,7 @@ export default function Sect2() {
       .to(".charGrid", { opacity: 1 });
   };
 
+  // * useEffect
   useEffect(() => {
     const keypress = (e) => {
       if (e.key === "Escape") {

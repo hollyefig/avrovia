@@ -1,20 +1,34 @@
 import React, { useState, useEffect } from "react";
 
+const getNextMonday = () => {
+  const currentDate = new Date();
+  let currentDay = currentDate.getUTCDay();
+  let daysUntilMonday = (1 + (7 - currentDay)) % 7;
+  const nextMonday = new Date(
+    currentDate.getUTCFullYear(),
+    currentDate.getUTCMonth(),
+    currentDate.getUTCDate() + daysUntilMonday,
+    15,
+    0,
+    0,
+    0
+  );
+  return nextMonday;
+};
+
 export default function Countdown() {
   const calculateCountdown = () => {
     const currentDate = new Date();
-    let currentDay = currentDate.getUTCDay();
-    let daysUntilMonday = (1 + (7 - currentDay)) % 7;
-    const countdownDate = new Date(
-      currentDate.getUTCFullYear(),
-      currentDate.getUTCMonth(),
-      currentDate.getUTCDate() + daysUntilMonday,
-      15,
-      0,
-      0,
-      0
-    );
-    const timeDifference = countdownDate - currentDate;
+    const nextMonday = getNextMonday();
+
+    // Calculate time difference until next Monday at 3pm
+    let timeDifference = nextMonday - currentDate;
+
+    // If the current time is after Monday 3pm, reset the countdown to 4 hours after Monday 3pm
+    if (timeDifference < 0) {
+      const newDeadline = new Date(nextMonday.getTime() + 4 * 60 * 60 * 1000);
+      timeDifference = newDeadline - currentDate;
+    }
 
     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -49,9 +63,8 @@ export default function Countdown() {
     const intervalId = setInterval(calculateCountdown, 1000);
     setInSession(countdown.days === 0 && countdown.seconds === 0);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, [countdown, setInSession]); // Run the effect once when the component mounts
+  }, [countdown, setInSession]);
 
   return (
     <>
