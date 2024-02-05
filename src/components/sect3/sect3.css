@@ -80,3 +80,19 @@
     font-style: italic;
 }
 
+/* & responsive */
+@media only screen and (max-width:768px) {
+    .sect3Flex {
+        flex-direction: column;
+        row-gap: 40px;
+        padding: 0;
+    }
+
+    .player {
+        max-width: none;
+    }
+
+    .sect3Right {
+        max-height: 200px;
+    }
+}

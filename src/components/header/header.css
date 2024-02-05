@@ -66,12 +66,19 @@
 
 @media only screen and (max-width: 800px) {
 
+    .headerFront {
+        display: none;
+    }
+    
+    .titleWrap {
+       display: none;
+    }
+
     .headerWrap {
         background-image: url('../../assets/images/headerBgMobile.jpg');
     }
 
     .subhead {
-        
         padding: .5em 1em;
         font-size: 18px;
     }
