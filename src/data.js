@@ -266,7 +266,7 @@ export const data = {
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.\n\n" +
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
-        video: "video url",
+        video: "https://www.youtube.com/embed/w08HCsad1vw?si=YxGIJNWXxw6hpEJM",
         gallery: "gallery",
       },
     },

@@ -1,3 +1,19 @@
+.floralBgWrap {
+    position: relative;
+}
+
+.floralBg {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/images/sect4Bg.png');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: bottom right;
+}
+
 .sect4Wrap {
     padding: 5px 24px;
     max-width: var(--maxWidth);
@@ -88,6 +104,25 @@
 
 .seshCarousel > div {
     padding: 2%;
+    width: 100%;
+}
+
+.seshVideo {
+    position: relative;
+    padding-bottom: 56.25%!important; /* 16:9 aspect ratio (height/width) */
+    height: 0;
+    overflow: hidden;
+    
+}
+
+.videoEmbed {
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      border: none;
 }
 
 /* * right side  */
@@ -103,6 +138,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    backdrop-filter: blur(108px);
 }
 
 
@@ -111,7 +147,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, max-content) auto;
     row-gap: 5px;
-    padding: 5px;
+    padding: 0 12px;
 }
 
 .prevSeshNum {
@@ -170,5 +206,10 @@
 
     .prevSesh {
         width: 200px;
+        padding: 12px 0;
+    }
+
+    .seshName {
+        font-size: 30px;
     }
 }
