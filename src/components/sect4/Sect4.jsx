@@ -29,6 +29,45 @@ export default function Sect4() {
     gsap.to(".seshCarousel", { right: parseInt(carouselWidth) * e });
   };
 
+  // ! get previous mondays
+  function getPrevMonday() {
+    const previousMondayDates = [];
+
+    // Get the current date
+    const currentDate = new Date();
+
+    // Loop through the last 16 weeks
+    for (let i = 0; i < sessions.length; i++) {
+      // Calculate the date for the current iteration
+      const previousMonday = new Date(currentDate);
+      previousMonday.setDate(
+        currentDate.getDate() - currentDate.getDay() + (i === 0 ? 0 : -7 * i)
+      );
+
+      // Calculate the difference in weeks, months, and years
+      const timePassed = {
+        weeks: Math.floor(
+          (currentDate - previousMonday) / (7 * 24 * 60 * 60 * 1000)
+        ),
+        months:
+          currentDate.getMonth() -
+          previousMonday.getMonth() +
+          12 * (currentDate.getFullYear() - previousMonday.getFullYear()),
+        years: currentDate.getFullYear() - previousMonday.getFullYear(),
+      };
+
+      // Add the date and time difference to the array
+      previousMondayDates.push({
+        date: previousMonday.toISOString().split("T")[0],
+        timePassed,
+      });
+    }
+
+    return previousMondayDates;
+  }
+
+  const dates = getPrevMonday();
+
   // * useEffect
   useEffect(() => {
     // adjust width for highligher in nav when resize
@@ -61,7 +100,7 @@ export default function Sect4() {
             {/* latest session node  */}
             <div className='countdownWrap copyDefault'>
               <span className='countdownCopy'>
-                <span className='fontBold'>Latest |</span> (date format)
+                <span className='fontBold'>Latest |</span> {dates[0].date}
               </span>
             </div>
             {/* session number */}
@@ -99,7 +138,7 @@ export default function Sect4() {
                   <iframe
                     src={latest.tabs.video}
                     title='YouTube video player'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
                     allowFullScreen
                     className='videoEmbed'
                   ></iframe>
@@ -110,15 +149,38 @@ export default function Sect4() {
           </div>
           {/* sect 4 right side */}
           <div className='sect4Right'>
-            {sessions.map((e, index) => (
-              <div className='prevSesh' key={e.name}>
-                <div className='prevSeshNum'>{sessions.length - index}</div>
-                <div className='prevSeshDate'>(date)</div>
-                <div className='prevSeshName uppercase fontBlack'>{e.name}</div>
-                <div className='prevSeshSum'>summary</div>
-                <div className='prevSeshLink uppercase'>view session</div>
-              </div>
-            ))}
+            {sessions.map((e, index) => {
+              // Skip the first item
+              if (index === 0) {
+                return null; // Skip rendering for the first item
+              }
+
+              let pastTime;
+
+              if (dates[index].timePassed.weeks <= 2) {
+                pastTime = `${dates[index].timePassed.weeks}w`;
+              } else if (dates[index].timePassed.weeks === 3) {
+                pastTime = `3w`;
+              } else if (dates[index].timePassed.weeks > 2) {
+                pastTime = `${Math.floor(dates[index].timePassed.weeks / 4)}m`;
+              }
+
+              return (
+                <div className='prevSesh' key={e.name}>
+                  <div className='prevSeshNum'>{sessions.length - index}</div>
+                  <div className='prevSeshDate'>
+                    {pastTime} | {dates[index].date}
+                  </div>
+                  <div className='prevSeshName uppercase fontBlack'>
+                    {e.name}
+                  </div>
+                  <div className='prevSeshSum'>
+                    {e.tabs.summary.slice(0, 90)}...
+                  </div>
+                  <div className='prevSeshLink uppercase'>view session</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

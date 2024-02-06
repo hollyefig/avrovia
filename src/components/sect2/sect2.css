@@ -46,12 +46,21 @@
     position: relative;
 }
 
-.charCopyWrap {
+/* .charCopyWrap {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     width: 100%;
     background-color: var(--lightWhite);
     position: relative;
+} */
+
+.charCopyWrap {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    width: 100%;
+    background-color: #d9d9d9a1;
+    position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .charCopy {

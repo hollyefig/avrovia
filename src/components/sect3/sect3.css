@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
 }
 
 .sect3Flex {
@@ -36,6 +37,11 @@
     row-gap: 10px;
     width: 100%;
     max-width: 425px;
+    padding: 0 5%;
+}
+
+.player > audio {
+    width: 100%;
 }
 
 .sect3Right {

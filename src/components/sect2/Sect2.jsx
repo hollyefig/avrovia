@@ -73,7 +73,7 @@ export default function Sect2() {
             {char && (
               <div className='charCopy'>
                 <span className='charSpecs'>
-                  <p className='pink displayFont displayMedium uppercase charName'>
+                  <p className='darkPink displayFont displayMedium uppercase charName'>
                     {char.name}
                   </p>
                   <span>
