@@ -16,7 +16,7 @@ const getNextMonday = () => {
   return nextMonday;
 };
 
-export default function Countdown() {
+export default function Countdown({ inSession, setInSession }) {
   const calculateCountdown = () => {
     const currentDate = new Date();
     const nextMonday = getNextMonday();
@@ -28,6 +28,9 @@ export default function Countdown() {
     if (timeDifference < 0) {
       const newDeadline = new Date(nextMonday.getTime() + 4 * 60 * 60 * 1000);
       timeDifference = newDeadline - currentDate;
+      setInSession(true);
+    } else {
+      setInSession(false);
     }
 
     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -50,9 +53,6 @@ export default function Countdown() {
     seconds: null,
   });
 
-  // ? determine session is live
-  const [inSession, setInSession] = useState(false);
-
   // ? get timezone
   const timezone = Intl.DateTimeFormat()
     .resolvedOptions()
@@ -61,10 +61,9 @@ export default function Countdown() {
   // * useEffect
   useEffect(() => {
     const intervalId = setInterval(calculateCountdown, 1000);
-    setInSession(countdown.days === 0 && countdown.seconds === 0);
 
     return () => clearInterval(intervalId);
-  }, [countdown, setInSession]);
+  }, []);
 
   return (
     <>

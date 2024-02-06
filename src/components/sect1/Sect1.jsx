@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sect1.css";
 import Countdown from "./Countdown";
 import { data } from "../../data.js";
@@ -10,11 +10,14 @@ export default function Sect1() {
   //     hour: 19,
   //   };
 
+  // ? determine session is live
+  const [inSession, setInSession] = useState(false);
+
   return (
     <div className='sect1Wrap'>
       <Svgs />
       {/* countdown */}
-      <div className='countdownWrap'>
+      <div className={`countdownWrap ${inSession && "seshLiveAnimate"}`}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='14'
@@ -25,7 +28,7 @@ export default function Sect1() {
           <circle cx='7' cy='7' r='7' fill='#D9D9D9' />
         </svg>
         <span className='countdownCopy'>
-          <Countdown />
+          <Countdown setInSession={setInSession} inSession={inSession} />
         </span>
       </div>
 

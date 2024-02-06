@@ -11,8 +11,10 @@
     --darkWhite: #CDCCCC;
     --gold: #C09A61;
     --pink: #DA7F90;
+    --darkPink: #8A525C;
     --green: #52523A;
     --brown: #2E2420;
+    --darkGrey: #8A8887;
     --displayFont: 'abhaya_librebold';
     --copyFont: "Lato", sans-serif;
     --fontBlack: 900;
@@ -43,6 +45,12 @@ body {
 }
 .pink {
     color: var(--pink);
+}
+.white {
+    color: var(--lightWhite);
+}
+.brown {
+    color: var(--brown);
 }
 
 .displayFont {

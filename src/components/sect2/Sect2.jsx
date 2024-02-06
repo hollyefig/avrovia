@@ -93,8 +93,11 @@ export default function Sect2() {
                   <p className='fontBold'>Player’s Notes</p>
                   <p>{char.playersNotes}</p>
                 </div>
-                <div className='closeCard pink copyDefault' onClick={closeCard}>
-                  close
+                <div
+                  className='closeCard white copyDefault'
+                  onClick={closeCard}
+                >
+                  X
                 </div>
               </div>
             )}

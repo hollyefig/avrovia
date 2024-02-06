@@ -43,6 +43,7 @@
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+    position: relative;
 }
 
 .charCopyWrap {
@@ -50,6 +51,7 @@
     grid-row: 2 / 4;
     width: 100%;
     background-color: var(--lightWhite);
+    position: relative;
 }
 
 .charCopy {
@@ -130,15 +132,23 @@
 
 .closeCard {
     cursor: pointer;
-    border:1px solid var(--pink);
-    width: fit-content;
-    height: fit-content;
-    padding: 3px 5px!important;
-    border-radius: 100em;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    padding: 0!important;
+    background-color: var(--pink);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 5;
+    transition: background-color .2s ease-out;
+}
+
+.closeCard:hover {
+    background-color: var(--darkPink);
 }
 
 /* & screen sizes */
@@ -171,6 +181,8 @@
         grid-row: none;        
         background-size: contain;        
         backdrop-filter: blur(19px);
+        bottom: -20px;
+        
     }
 
     .charGrid {
@@ -191,10 +203,6 @@
         grid-template-columns: repeat(6, 150px);
         gap: 5%;
         overflow-x: scroll;
-    }
-
-    .charPhoto {      
-        background-size: cover;        
     }
 
     .charSpecs > span {

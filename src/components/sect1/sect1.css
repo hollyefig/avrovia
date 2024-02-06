@@ -19,6 +19,24 @@
     color: var(--lightWhite);
 }
 
+.seshLiveAnimate {
+    animation: seshLive 4s infinite
+}
+
+@keyframes seshLive {
+    0% {
+        background-color: var(--darkPink);
+    }
+    50% {
+        background-color: var(--pink);
+    }
+
+    100% {
+        background-color: var(--darkPink);
+    }
+    
+}
+
 .sect1Copy {
     display: flex;
     flex-direction: column;
