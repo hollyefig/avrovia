@@ -10,7 +10,8 @@ export default function Sect4() {
 
   // ? session data
   const seshData = data.sessions;
-  const latest = seshData[seshData.length - 1];
+  const recent = seshData[seshData.length - 1];
+  const [latest, setLatest] = useState(recent);
 
   const sessions = seshData.slice();
   sessions.reverse();
@@ -69,6 +70,12 @@ export default function Sect4() {
   }
 
   const dates = getPrevMonday();
+
+  // ! get session
+  const getSession = (e) => {
+    console.log(e);
+    setLatest(e);
+  };
 
   // * useEffect
   useEffect(() => {
@@ -134,14 +141,17 @@ export default function Sect4() {
                     {latest.tabs.summary}
                   </pre>
                 </div>
+                {/* video  */}
                 <div className='seshVideo'>
-                  <iframe
-                    src={latest.tabs.video}
-                    title='YouTube video player'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
-                    allowFullScreen
-                    className='videoEmbed'
-                  ></iframe>
+                  {latest.tabs.video && (
+                    <iframe
+                      src={latest.tabs.video}
+                      title='YouTube video player'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
+                      allowFullScreen
+                      className='videoEmbed'
+                    ></iframe>
+                  )}
                 </div>
                 <div className='seshGallery'>{latest.tabs.gallery}</div>
               </div>
@@ -150,11 +160,6 @@ export default function Sect4() {
           {/* sect 4 right side */}
           <div className='sect4Right'>
             {sessions.map((e, index) => {
-              // Skip the first item
-              if (index === 0) {
-                return null; // Skip rendering for the first item
-              }
-
               let pastTime;
 
               if (dates[index].timePassed.weeks <= 2) {
@@ -177,7 +182,12 @@ export default function Sect4() {
                   <div className='prevSeshSum'>
                     {e.tabs.summary.slice(0, 90)}...
                   </div>
-                  <div className='prevSeshLink uppercase'>view session</div>
+                  <div
+                    className='prevSeshLink uppercase'
+                    onClick={() => getSession(e)}
+                  >
+                    view session
+                  </div>
                 </div>
               );
             })}
