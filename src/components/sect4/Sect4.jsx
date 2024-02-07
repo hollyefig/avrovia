@@ -94,15 +94,13 @@ export default function Sect4() {
     <div className='floralBgWrap'>
       <div className='floralBg'></div>
       <div className='sect4Wrap'>
-        <div className='displayFont uppercase displayLarge green sect4Header'>
-          Sessions
-        </div>
         <div className='sect4Content copyFont'>
           <div className='sect4Left'>
             {/* latest session node  */}
             <div className='countdownWrap copyDefault'>
               <span className='countdownCopy'>
-                <span className='fontBold'>Latest |</span> {dates[0].date}
+                <span className='fontBold'>Latest Session |</span>{" "}
+                {dates[0].date}
               </span>
             </div>
             {/* session number */}

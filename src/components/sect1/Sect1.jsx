@@ -4,6 +4,7 @@ import Countdown from "./Countdown";
 import { data } from "../../data.js";
 import Svgs from "../Svgs.jsx";
 import gsap from "gsap";
+import followAdventure from "../../assets/images/followAdventure.png";
 
 export default function Sect1() {
   // ? determine session is live
@@ -33,37 +34,47 @@ export default function Sect1() {
         </span>
       </div>
 
-      {/* copy  */}
-      <div className='sect1Copy'>
-        <span className='uppercase green displayFont displayMedium'>
-          Follow the adventure!
-        </span>
-        <span className='pink fontBold copyMedium'>
-          <em>Mondays @ 3pm EST</em>
-        </span>
-        <span className='copyDefault green'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          debitis excepturi architecto ipsum, aliquid quia autem nam, cum
-          aspernatur facere accusantium illo pariatur ex in dolor animi quae?
-        </span>
-      </div>
+      <div className='sect1Content'>
+        {/* copy  */}
+        <div className='sect1Left'>
+          <img src={followAdventure} alt='Follow The Adventure!' />
+        </div>
 
-      {/* socials  */}
-      <div className='iconSocialsWrap'>
-        {data.socials.map((e, index) => (
-          <div className='iconSocial' key={index}>
-            <div className='iconCircle'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                xmlnsXlink='http://www.w3.org/1999/xlink'
-                className='iconSocials'
-              >
-                <use href={`#${e}`}></use>
-              </svg>
-            </div>
-            <span>{e}</span>
+        <div className='sect1Right'>
+          <span className='pink fontBold copyMedium'>
+            <em>Mondays @ 3pm EST</em>
+          </span>
+          <span className='copyDefault green'>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae debitis excepturi architecto ipsum, aliquid quia autem
+              nam, cum aspernatur facere accusantium illo pariatur ex in dolor
+              animi quae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae debitis excepturi architecto ipsum
+            </p>
+          </span>
+
+          {/* socials  */}
+          <div className='iconSocialsWrap'>
+            {data.socials.map((e, index) => (
+              <div className='iconSocial' key={index}>
+                <div className='iconCircle'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlnsXlink='http://www.w3.org/1999/xlink'
+                    className='iconSocials'
+                  >
+                    <use href={`#${e}`}></use>
+                  </svg>
+                </div>
+                <span>{e}</span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

@@ -12,9 +12,11 @@ export default function Sect3() {
 
   return (
     <div className='sect2Wrap'>
-      <span className='green uppercase displayLarge largeSubhead'>Music</span>
       <div className='sect3Bg'>
         <div className='sect3Flex'>
+          <span className='white uppercase displayLarge musicSubhead'>
+            Music
+          </span>
           <div className='sect3Left'>
             <div className='player'>
               <span className='songTitle displayFont displaySmall'>

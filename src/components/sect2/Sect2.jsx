@@ -66,7 +66,6 @@ export default function Sect2() {
 
   return (
     <div className='sect2Wrap'>
-      <span className='green uppercase displayLarge largeSubhead'>Cast</span>
       <div className='charDisplay'>
         <div className='charGrid' ref={gridRef}>
           <div className='charCopyWrap'>

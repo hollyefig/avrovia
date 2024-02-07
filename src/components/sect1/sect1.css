@@ -12,6 +12,7 @@
     opacity: 0;
 }
 
+
 .countdownWrap {
     border-radius: 40px;
     background: var(--pink);
@@ -43,21 +44,39 @@
     
 }
 
-.sect1Copy {
+.sect1Content {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    padding: 20px 0;
+    flex-direction: row;
+    padding: 5% 0 0 0;
 }
 
-.sect1Copy > span:not(:first-child) {
+.sect1Left, .sect1Right {
+    flex: 1;
+    display: flex;
+    width: 100%;
+}
+
+.sect1Left img {
+    width: 100%;
+    height: auto;
+}
+
+.sect1Right {
+    flex-direction: column;
+}
+
+.sect1Right p {
     padding: 10px 0;
+    display: inline-block;
 }
 
 .iconSocialsWrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
+    height: 100%;
 }
 
 .iconSocial {
@@ -90,7 +109,7 @@
 }
 
 .iconCircle svg {
-    width: 60px;
+    width: 40px;
     aspect-ratio: 1 / 1;
     fill: var(--pink);
     transition: fill .2s ease-out;
@@ -102,12 +121,24 @@
 
 @media only screen and (max-width: 768px) {
 
+    .sect1Content {
+        flex-direction: column;
+    }
+
     .iconCircle {
         padding: 15px;
     }
 
     .iconCircle svg {
         width: 35px;
+    }
+
+    .sect1Left {
+        justify-content: center;
+    }
+    .sect1Left img {
+        max-width: 300px;
+        width: 100%;
     }
 }
 
