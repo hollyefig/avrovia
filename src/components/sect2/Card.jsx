@@ -9,11 +9,9 @@ export default function Card({ img, alt, openCard, data }) {
   const directionRef = useRef(null);
 
   const mouseEnter = (e) => {
-    console.log("enter", e.target.id);
     gsap.to(e.target, { scale: 1.05, duration: 0.3 });
   };
   const mouseLeave = (e) => {
-    console.log("leave", e.target.id);
     gsap.to(e.target, { scale: 1, duration: 0.3 });
   };
 

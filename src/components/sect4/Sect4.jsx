@@ -10,16 +10,17 @@ export default function Sect4() {
 
   // ? session data
   const seshData = data.sessions;
-  const recent = seshData[seshData.length - 1];
+  const recent = {
+    info: seshData[seshData.length - 1],
+    index: seshData.length,
+  };
   const [latest, setLatest] = useState(recent);
 
   const sessions = seshData.slice();
   sessions.reverse();
 
-  console.log();
-
   // ? get tab key names, tab width state
-  const tabs = Object.keys(latest.tabs);
+  const tabs = Object.keys(latest.info.tabs);
   const [highlightWidth, setHighlightWidth] = useState();
   // ? carousel
   const carouselRef = useRef(null);
@@ -72,9 +73,8 @@ export default function Sect4() {
   const dates = getPrevMonday();
 
   // ! get session
-  const getSession = (e) => {
-    console.log(e);
-    setLatest(e);
+  const getSession = (e, index) => {
+    setLatest({ info: e, index: index });
   };
 
   // * useEffect
@@ -97,25 +97,33 @@ export default function Sect4() {
     };
   }, [list, setHighlightWidth]);
 
+  console.log();
+
   return (
     <div className='floralBgWrap'>
       <div className='floralBg'></div>
       <div className='sect4Wrap'>
         <div className='sect4Content copyFont'>
           <div className='sect4Left'>
-            {/* latest session node  */}
-            <div className='countdownWrap copyDefault'>
-              <span className='countdownCopy'>
-                <span className='fontBold'>Latest Session |</span>{" "}
-                {dates[0].date}
+            {/* session number, date */}
+            <div className='seshNum brown'>
+              {/* latest session node  */}
+              {latest.index === seshData.length && (
+                <div className='countdownWrap copyDefault'>
+                  <span className='countdownCopy'>
+                    <span>Latest Session</span>{" "}
+                  </span>
+                </div>
+              )}
+              <span>session {latest.index}</span>
+              <span>|</span>
+              <span className='activeDate'>
+                {dates[seshData.length - latest.index].date}
               </span>
             </div>
-            {/* session number */}
-            <div className='seshNum uppercase brown'>
-              session {seshData.length}
-            </div>
             {/* session name */}
-            <div className='seshName uppercase brown'>{latest.name}</div>
+            <div className='seshName uppercase brown'>{latest.info.name}</div>
+
             {/* nav  */}
             <div className='sect4NavWrap'>
               <div
@@ -138,14 +146,14 @@ export default function Sect4() {
                     className='copyDefault'
                     style={{ whiteSpace: "pre-line" }}
                   >
-                    {latest.tabs.summary}
+                    {latest.info.tabs.summary}
                   </pre>
                 </div>
                 {/* video  */}
                 <div className='seshVideo'>
-                  {latest.tabs.video && (
+                  {latest.info.tabs.video && (
                     <iframe
-                      src={latest.tabs.video}
+                      src={latest.info.tabs.video}
                       title='YouTube video player'
                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
                       allowFullScreen
@@ -153,7 +161,7 @@ export default function Sect4() {
                     ></iframe>
                   )}
                 </div>
-                <div className='seshGallery'>{latest.tabs.gallery}</div>
+                <div className='seshGallery'>{latest.info.tabs.gallery}</div>
               </div>
             </div>
           </div>
@@ -184,7 +192,7 @@ export default function Sect4() {
                   </div>
                   <div
                     className='prevSeshLink uppercase'
-                    onClick={() => getSession(e)}
+                    onClick={() => getSession(e, sessions.length - index)}
                   >
                     view session
                   </div>
