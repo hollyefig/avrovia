@@ -1,0 +1,57 @@
+
+
+
+
+import React, { useRef } from "react";
+import gsap from "gsap";
+
+const sanitizeId = (str) => {
+  return str.replace(/\s+/g, "_").toLowerCase(); // Replace spaces with underscores and convert to lowercase
+};
+
+export default function Card({ img, alt, openCard, data }) {
+  const directionRef = useRef(null);
+
+  const pointerMove = (e) => {
+    const id = e.target.id;
+
+    if (id) {
+      const dirX = e.nativeEvent.offsetX;
+      const dirY = e.nativeEvent.offsetY;
+
+      if (dirX <= 125 && dirY <= 165) {
+        gsap.set(e.target, {
+          rotationX: 12,
+          rotationY: 12,
+          transformOrigin: "bottom right",
+        });
+      } else {
+        gsap.set(e.target, { rotationX: 0, rotationY: 0 });
+      }
+    }
+  };
+
+  const pointerEnter = (e) => {
+    console.log(e.target);
+    pointerMove(e);
+  };
+
+  const pointerLeave = (e) => {
+    console.log("leave");
+    gsap.to(e.target, { rotationX: 0, rotationY: 0 });
+  };
+
+  return (
+    <div
+      className={`card ${data.name}`}
+      onClick={() => openCard(data)}
+      ref={directionRef}
+      onMouseMove={(e) => pointerMove(e)}
+      onMouseEnter={(e) => pointerEnter(e)}
+      onMouseLeave={(e) => pointerLeave(e)}
+    >
+      <img src={img} alt={alt} id={sanitizeId(data.name)} />
+    </div>
+  );
+}
+

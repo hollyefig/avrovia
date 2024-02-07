@@ -4,6 +4,7 @@ import { data } from "../../data";
 import "./sect2.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Card from "./Card";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -120,12 +121,12 @@ export default function Sect2() {
       {/* end char display  */}
       <div className='charCardsWrap' ref={cardWrapRef}>
         {cast.map((e, index) => (
-          <img
-            src={cast[index].card}
+          <Card
+            img={cast[index].card}
             alt={`the ${e.class}`}
             key={e.name}
-            onClick={() => openCard(e)}
-            className='card'
+            openCard={openCard}
+            data={e}
           />
         ))}
       </div>

@@ -121,11 +121,15 @@
 }
 
 .card {
-    width: 100%;
     cursor: pointer;
     position: relative;
     opacity: 0;
-    transform: rotateY(70deg);
+    transform: rotateY(70deg); 
+    position: relative;
+}
+
+.card img {
+    width: 100%;
 }
 
 .closeCard {
