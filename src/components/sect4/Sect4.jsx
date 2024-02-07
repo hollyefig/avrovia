@@ -12,8 +12,10 @@ export default function Sect4() {
   const seshData = data.sessions;
   const latest = seshData[seshData.length - 1];
 
-  const sessions = seshData.slice(0, -1);
+  const sessions = seshData.slice();
   sessions.reverse();
+
+  console.log();
 
   // ? get tab key names, tab width state
   const tabs = Object.keys(latest.tabs);
@@ -183,7 +185,50 @@ export default function Sect4() {
             })}
           </div>
         </div>
+        {/* end sect4 wrap */}
       </div>
+      <div className='footerWrap'>
+        <div className='footerContent'>
+          <span className='uppercase displayFont displayLarge white'>
+            special thanks
+          </span>
+          <div className='footerGrid copyDefault white'>
+            <div className='karaThanks'>
+              <p className='fontBold'>Karawek</p>
+              <p>
+                <em>Campaign DM | Artist</em>
+              </p>
+              <div className='thanksSocials'>
+                <span>Twitter</span> | <span>Discord</span> |{" "}
+                <span>Instagram</span>
+              </div>
+            </div>
+            <div className='zebbyThanks'>
+              <p className='fontBold'>Zebby</p>
+              <p>
+                <em>Musician | Visual Media</em>
+              </p>
+              <div className='thanksSocials'>
+                <span>Twitter</span> | <span>Discord</span> |{" "}
+                <span>SoundCloud</span>
+              </div>
+            </div>
+            <div className='hollyThanks'>
+              <p className='fontBold'>Holly Fig</p>
+              <p>
+                <em>Developer | Artist</em>
+              </p>
+              <div className='thanksSocials'>
+                <span>Instagram</span> | <span>Discord</span> |{" "}
+                <span>GitHub</span>
+              </div>
+            </div>
+            <div className='thankYou fontBold'>...& all the great players!</div>
+          </div>
+        </div>
+        {/* end footer */}
+      </div>
+      <div className='spacerFooter'></div>
     </div>
   );
 }
