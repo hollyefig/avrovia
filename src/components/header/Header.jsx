@@ -7,7 +7,6 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = (e) => {
-      console.log("scroll", e.target.scrollingElement.scrollTop);
       const scrollTarget = e.target.scrollingElement.scrollTop;
       titleRef.current !== null && scrollTarget >= 390
         ? (titleRef.current.style.opacity = 0)

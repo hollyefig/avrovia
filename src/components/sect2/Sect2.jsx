@@ -13,6 +13,8 @@ export default function Sect2() {
   const [char, setChar] = useState(null);
   const gridRef = useRef(null);
 
+  const cardWrapRef = useRef(null);
+
   // ! open a card
   const openCard = (e) => {
     setChar(e);
@@ -45,16 +47,22 @@ export default function Sect2() {
       }
     };
 
-    gsap.to(".charCardsWrap", {
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
-      bottom: 0,
-      scrollTrigger: {
-        trigger: ".charCardsWrap > img:first-child",
-        start: "center bottom",
-        // markers: true,
+    // ? scrollTrigger batch
+    ScrollTrigger.batch(cardWrapRef.current, {
+      interval: 0.5,
+      start: "20% 75%",
+      batchMax: 6,
+      // markers: true,
+      onEnter: (batch) => {
+        gsap.to(".card", {
+          opacity: 1,
+          rotateY: 0,
+          duration: 1,
+          ease: "power4.out",
+          stagger: 0.25,
+        });
       },
+      // onEnterBack: (batch) => console.log(batch),
     });
 
     document.addEventListener("keydown", (e) => keypress(e));
@@ -110,13 +118,14 @@ export default function Sect2() {
         </div>
       </div>
       {/* end char display  */}
-      <div className='charCardsWrap'>
+      <div className='charCardsWrap' ref={cardWrapRef}>
         {cast.map((e, index) => (
           <img
             src={cast[index].card}
             alt={`the ${e.class}`}
             key={e.name}
             onClick={() => openCard(e)}
+            className='card'
           />
         ))}
       </div>
