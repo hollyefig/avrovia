@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.a3e7f527.css",
-    "main.js": "/avrovia/static/js/main.bc75202e.js",
+    "main.css": "/avrovia/static/css/main.811676a0.css",
+    "main.js": "/avrovia/static/js/main.0adf51a1.js",
     "static/media/Avrovia.mp3": "/avrovia/static/media/Avrovia.9dc0fffb60c8d17aa207.mp3",
     "static/media/SoulsofSardinia_NecroticWaters.mp3": "/avrovia/static/media/SoulsofSardinia_NecroticWaters.8ef8d241567e5257e5c2.mp3",
     "static/media/ChildofSea_ShulasTheme.mp3": "/avrovia/static/media/ChildofSea_ShulasTheme.50913bb8bf51eae32b19.mp3",
@@ -53,11 +53,11 @@
     "static/media/AbhayaLibre-Bold-webfont.woff": "/avrovia/static/media/AbhayaLibre-Bold-webfont.329e62fa42cfb1f9b2bf.woff",
     "static/media/avroviaTitle.png": "/avrovia/static/media/avroviaTitle.8737b7f62d55fd2a6ede.png",
     "index.html": "/avrovia/index.html",
-    "main.a3e7f527.css.map": "/avrovia/static/css/main.a3e7f527.css.map",
-    "main.bc75202e.js.map": "/avrovia/static/js/main.bc75202e.js.map"
+    "main.811676a0.css.map": "/avrovia/static/css/main.811676a0.css.map",
+    "main.0adf51a1.js.map": "/avrovia/static/js/main.0adf51a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3e7f527.css",
-    "static/js/main.bc75202e.js"
+    "static/css/main.811676a0.css",
+    "static/js/main.0adf51a1.js"
   ]
 }
