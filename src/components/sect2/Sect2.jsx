@@ -61,16 +61,7 @@ export default function Sect2() {
           stagger: 0.25,
         });
       },
-      // onEnterBack: (batch) => console.log(batch),
-      onEnterBack: (batch) => {
-        gsap.to(".card", {
-          opacity: 0,
-          rotateY: 0,
-          duration: 1,
-          ease: "power4.out",
-          stagger: 0.25,
-        });
-      },
+      onEnterBack: (batch) => console.log(batch),
     });
 
     document.addEventListener("keydown", (e) => keypress(e));
