@@ -48,7 +48,8 @@ export default function Sect2() {
     // ? scrollTrigger batch
     ScrollTrigger.batch(cardWrapRef.current, {
       interval: 0.5,
-      start: "20% 75%",
+      start: "15% 75%",
+      end: "-70% 0%",
       batchMax: 6,
       // markers: true,
       onEnter: (batch) => {
@@ -61,6 +62,15 @@ export default function Sect2() {
         });
       },
       // onEnterBack: (batch) => console.log(batch),
+      onEnterBack: (batch) => {
+        gsap.to(".card", {
+          opacity: 0,
+          rotateY: 0,
+          duration: 1,
+          ease: "power4.out",
+          stagger: 0.25,
+        });
+      },
     });
 
     document.addEventListener("keydown", (e) => keypress(e));

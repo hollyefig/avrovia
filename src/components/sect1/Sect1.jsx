@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./sect1.css";
 import Countdown from "./Countdown";
 import { data } from "../../data.js";
 import Svgs from "../Svgs.jsx";
-import gsap from "gsap";
+
 import followAdventure from "../../assets/images/followAdventure.png";
 
 export default function Sect1() {
   // ? determine session is live
   const [inSession, setInSession] = useState(false);
-
-  useEffect(() => {
-    gsap.to(".sect1Wrap > *", { y: -20, opacity: 1, stagger: 0.2, delay: 1 });
-    return () => {};
-  }, []);
 
   return (
     <div className='sect1Wrap'>
