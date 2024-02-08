@@ -11,7 +11,7 @@ export default function Sect3() {
   };
 
   return (
-    <div className='sect2Wrap'>
+    <div className='sect3Wrap'>
       <div className='sect3Bg'>
         <div className='sect3Flex'>
           <span className='white uppercase displayLarge musicSubhead'>

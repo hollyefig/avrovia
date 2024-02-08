@@ -70,7 +70,6 @@ export default function Sect1() {
                     <use href={`#${e}`}></use>
                   </svg>
                 </div>
-                <span>{e}</span>
               </div>
             ))}
           </div>

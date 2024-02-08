@@ -28,6 +28,21 @@
     position: relative;
     transform: translateY(0px);
     position: fixed;
+    transform: scale(1.2);
+    filter: blur(50px);
+    animation: focusIn 1s ease-in-out forwards;
+}
+
+@keyframes focusIn {
+    0% {
+        transform: scale(1.2);
+    filter: blur(50px);
+    }
+    100% {
+        transform: scale(1);
+    filter: blur(0px);
+    }
+    
 }
 
 
@@ -51,7 +66,7 @@
     font-size: 22px;
     opacity: 0;
     animation: fadeIn 1s forwards;
-    animation-delay: .5s;
+    animation-delay: 1.5s;
 }
 
 @keyframes fadeIn {

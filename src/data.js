@@ -202,7 +202,10 @@ export const data = {
       tabs: {
         summary:
           "The nymph statueof the Venusean Pool is a sight to behold. Carved from the finest marble and adorned with intricate details that make it look like the statue has come to life. The statue depicts a beautiful nymph with flowing hair and an expression of serenity on her face. The statue exudes an aura of divinity and is said to be a representation of the nymphs who guard the pool. The statue is placed in such a way that it looks as if it is watching over the pool and its visitors, providing a sense of safety and protection.\n\n" +
-          "Only the pure of heart may reveal themselves, for the water reflects the soul.",
+          "Only the pure of heart may reveal themselves, for the water reflects the soul./n/n" +
+          "In the vast ocean of possibilities, be the fish that stands out. - Miss Sardinia .\n\n" +
+          "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
+          "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
         gallery: "gallery",
       },
@@ -211,7 +214,10 @@ export const data = {
       name: "Unleashed from the Depths",
       tabs: {
         summary:
-          "Martin's Inn is a quaint tavern that has stood the test of the earthquake. Once known as Marlin's Inn, a small typo on the sign caused the name to change forever. However, this hasn't stopped the locals from frequenting the establishment. The smell of freshly cooked fish and salt water wafts through the air, and as the dawn breaks, the front door is cast in a green-pink glow, making the sign that reads Fish be Kick stand out. It's a welcoming spot for travelers and locals alike, with its friendly atmosphere, hearty food, and your friends sitting in the midst of it.",
+          "Martin's Inn is a quaint tavern that has stood the test of the earthquake. Once known as Marlin's Inn, a small typo on the sign caused the name to change forever. However, this hasn't stopped the locals from frequenting the establishment. The smell of freshly cooked fish and salt water wafts through the air, and as the dawn breaks, the front door is cast in a green-pink glow, making the sign that reads Fish be Kick stand out. It's a welcoming spot for travelers and locals alike, with its friendly atmosphere, hearty food, and your friends sitting in the midst of it./n/n" +
+          "In the vast ocean of possibilities, be the fish that stands out. - Miss Sardinia .\n\n" +
+          "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
+          "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
         gallery: "gallery",
       },
@@ -234,7 +240,10 @@ export const data = {
       tabs: {
         summary:
           "Fish be friend! Have you heard? This year's Gala is supposed to be super fun, with lots of new stalls, challenges and even... celebrities? I can't wait! We are still going to Gala Sardinia together, right?\n\n" +
-          "With swords drawn, spells slung and hearts racing, the adventurers put up a fierce battle against Namari. In the end, they succeeded and captured her spirit within the spirit vessel. Her energy pulsates with an eerie green and blue light. The same hues that ripple across the treacherous Anolyte Ocean, which the party knows all too well. But now, as they bask in the afterglow of their triumph, they can't help but feel this newfound strength  coursing through their veins.",
+          "With swords drawn, spells slung and hearts racing, the adventurers put up a fierce battle against Namari. In the end, they succeeded and captured her spirit within the spirit vessel. Her energy pulsates with an eerie green and blue light. The same hues that ripple across the treacherous Anolyte Ocean, which the party knows all too well. But now, as they bask in the afterglow of their triumph, they can't help but feel this newfound strength  coursing through their veins.\n\n" +
+          "In the vast ocean of possibilities, be the fish that stands out. - Miss Sardinia .\n\n" +
+          "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
+          "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
         gallery: "gallery",
       },
@@ -245,7 +254,10 @@ export const data = {
         summary:
           "Subject: Urgent Report: Planar Overlapping at Rosewood Manor and Multiversal Impact\n\n" +
           "General Vonn Ursa,\n\n" +
-          "I write to you as a dedicated member of the Legion of Seekers to bring forth a matter of utmost urgency and grave concern. Our recent investigations have unveiled a potentially catastrophic event taking place at Rosewood Manor—an unprecedented planar overlapping that poses a severe threat to the stability of the entire multiverse...",
+          "I write to you as a dedicated member of the Legion of Seekers to bring forth a matter of utmost urgency and grave concern. Our recent investigations have unveiled a potentially catastrophic event taking place at Rosewood Manor—an unprecedented planar overlapping that poses a severe threat to the stability of the entire multiverse...\n\n" +
+          "In the vast ocean of possibilities, be the fish that stands out. - Miss Sardinia .\n\n" +
+          "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
+          "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
         gallery: "gallery",
       },

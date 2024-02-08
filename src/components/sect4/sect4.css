@@ -1,5 +1,6 @@
 .floralBgWrap {
     position: relative;
+    padding: 7% 0 0 0;
 }
 
 .floralBg {
@@ -196,9 +197,13 @@
     font-size: 12px;
     cursor: pointer;
     text-decoration: underline;
-    opacity: .4;
+    color: var(--darkGrey);
     display: flex;
     align-items: flex-end;
+}
+
+.prevSeshLink:hover {
+    color: #000;
 }
 
 /* * footer  */

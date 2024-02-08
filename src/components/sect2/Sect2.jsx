@@ -22,18 +22,18 @@ export default function Sect2() {
     gsap
       .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
       .to(window, {
-        scrollTo: { y: ".sect2Wrap" },
+        scrollTo: { y: ".sect2Wrap", offsetY: 100 },
       })
       .to(".charDisplay", { height: "auto" }, "<.3")
       .to(".charGrid", { opacity: 1 });
   };
 
   const closeCard = () => {
-    console.log("close");
     gsap
-      .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
+      .timeline({ defaults: { duration: 0.4, ease: "power2.out" } })
       .to(".charGrid", { opacity: 0 })
-      .to(".charDisplay", { height: "0px" });
+      .to(".charDisplay", { height: "0px" })
+      .to(window, { scrollTo: { y: ".charCardsWrap" } });
   };
 
   // * useEffect
@@ -41,10 +41,7 @@ export default function Sect2() {
     // ? close by esc
     const keypress = (e) => {
       if (e.key === "Escape") {
-        gsap
-          .timeline({ defaults: { duration: 0.7, ease: "power2.out" } })
-          .to(".charGrid", { opacity: 0 })
-          .to(".charDisplay", { height: "0px" });
+        closeCard();
       }
     };
 
