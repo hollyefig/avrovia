@@ -32,8 +32,7 @@ export default function Sect2() {
     gsap
       .timeline({ defaults: { duration: 0.4, ease: "power2.out" } })
       .to(".charGrid", { opacity: 0 })
-      .to(".charDisplay", { height: "0px" })
-      .to(window, { scrollTo: { y: ".charCardsWrap" } });
+      .to(".charDisplay", { height: "0px" });
   };
 
   // * useEffect
