@@ -5,6 +5,9 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .headerWrap {
     background-image: url('../../assets/images/headerBg.jpg');
@@ -17,16 +20,15 @@
 
 .titleWrap {
     width: 100%;
-    height: 100%;
+    max-width: 1040px;
+    height: 104px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.titleWrap img {
-    width: 60%;
-    position: relative;
-    transform: translateY(0px);
+    background-image: url('../../assets/images/avroviaTitle.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
     position: fixed;
     transform: scale(1.2);
     filter: blur(50px);
@@ -82,20 +84,48 @@
 
 @media only screen and (max-width: 800px) {
 
+    .headerWrap, .headerFront {
+        width: 100%;
+        height: 470px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .headerWrap {
+        background-image: url('../../assets/images/headerBgMobile.jpg');
+    }
     .headerFront {
-        display: none;
+        background-image: url('../../assets/images/headerBgMobileFront.png');
+        position: absolute;
+        top: 0;
     }
     
     .titleWrap {
-       display: none;
+        max-width: 425px;
+        width: 90vw;
+        height: 390px;
+        background: none;
+        display: flex;
+        flex-direction: column;
+        background-image: url('../../assets/images/avroviaTitleMobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
 
-    .headerWrap {
-        background-image: url('../../assets/images/headerBgMobile.jpg');
+
+    .subheadWrap {
+        grid-template-rows: 4fr 1.5fr;
     }
 
     .subhead {
         padding: .5em 1em;
         font-size: 18px;
+        backdrop-filter: blur(20px);
+        border: none;
     }
 }

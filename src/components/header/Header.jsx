@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import "./header.css";
-import avroviaTitle from "../../assets/images/avroviaTitle.png";
 
 export default function Header() {
   const titleRef = useRef(null);
@@ -21,9 +20,7 @@ export default function Header() {
 
   return (
     <div className='headerWrap'>
-      <div className='titleWrap'>
-        <img src={avroviaTitle} alt='' ref={titleRef} />
-      </div>
+      <div className='titleWrap' ref={titleRef}></div>
       <div className='headerFront'></div>
       <div className='subheadWrap'>
         <div className='headerSpacer'></div>
