@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.da6d193f.css",
-    "main.js": "/avrovia/static/js/main.2d0c0fc5.js",
+    "main.css": "/avrovia/static/css/main.a69685a9.css",
+    "main.js": "/avrovia/static/js/main.e159cbf1.js",
     "static/media/Avrovia.mp3": "/avrovia/static/media/Avrovia.9dc0fffb60c8d17aa207.mp3",
     "static/media/SoulsofSardinia_NecroticWaters.mp3": "/avrovia/static/media/SoulsofSardinia_NecroticWaters.8ef8d241567e5257e5c2.mp3",
     "static/media/ChildofSea_ShulasTheme.mp3": "/avrovia/static/media/ChildofSea_ShulasTheme.50913bb8bf51eae32b19.mp3",
@@ -38,7 +38,7 @@
     "static/media/CalmingChime.mp3": "/avrovia/static/media/CalmingChime.ec213bb80a4219f01cb9.mp3",
     "static/media/sect2Bg.jpg": "/avrovia/static/media/sect2Bg.33d618c1b75049fbb0ed.jpg",
     "static/media/sect4Bg.png": "/avrovia/static/media/sect4Bg.59e03bbf22bd84bf1867.png",
-    "static/media/headerBgMobile.jpg": "/avrovia/static/media/headerBgMobile.1f87908e77262d12ae71.jpg",
+    "static/media/headerBgMobile.jpg": "/avrovia/static/media/headerBgMobile.6d36707b1c9d5afddca2.jpg",
     "static/media/headerBg.jpg": "/avrovia/static/media/headerBg.b7219e7cf34aedce1b76.jpg",
     "static/media/followAdventure.png": "/avrovia/static/media/followAdventure.bd96d57583475fd6dcf2.png",
     "static/media/imgMathilda.jpg": "/avrovia/static/media/imgMathilda.5705a714c9897ad9784a.jpg",
@@ -50,14 +50,16 @@
     "static/media/cardWarlock.png": "/avrovia/static/media/cardWarlock.7bdb279ba170db861eb4.png",
     "static/media/cardWizard.png": "/avrovia/static/media/cardWizard.346d72399b989f000b71.png",
     "static/media/headerBgFront.png": "/avrovia/static/media/headerBgFront.756d6abf4a76a31a54ee.png",
+    "static/media/headerBgMobileFront.png": "/avrovia/static/media/headerBgMobileFront.cb5e2c3f3c69670405de.png",
     "static/media/AbhayaLibre-Bold-webfont.woff": "/avrovia/static/media/AbhayaLibre-Bold-webfont.329e62fa42cfb1f9b2bf.woff",
+    "static/media/avroviaTitleMobile.png": "/avrovia/static/media/avroviaTitleMobile.216431adf59f39e4a245.png",
     "static/media/avroviaTitle.png": "/avrovia/static/media/avroviaTitle.8737b7f62d55fd2a6ede.png",
     "index.html": "/avrovia/index.html",
-    "main.da6d193f.css.map": "/avrovia/static/css/main.da6d193f.css.map",
-    "main.2d0c0fc5.js.map": "/avrovia/static/js/main.2d0c0fc5.js.map"
+    "main.a69685a9.css.map": "/avrovia/static/css/main.a69685a9.css.map",
+    "main.e159cbf1.js.map": "/avrovia/static/js/main.e159cbf1.js.map"
   },
   "entrypoints": [
-    "static/css/main.da6d193f.css",
-    "static/js/main.2d0c0fc5.js"
+    "static/css/main.a69685a9.css",
+    "static/js/main.e159cbf1.js"
   ]
 }
