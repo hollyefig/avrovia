@@ -1,5 +1,6 @@
 import anya from "./assets/images/imgAnya.jpg";
 import mathilda from "./assets/images/imgMathilda.jpg";
+import flavian from "./assets/images/imgFlavian.jpg";
 
 import cardRogue from "./assets/images/cardRogue.png";
 import cardWarlock from "./assets/images/cardWarlock.png";
@@ -53,7 +54,7 @@ export const data = {
       card: cardRanger,
     },
     {
-      name: "Mathilda Blairwood",
+      name: "Mathilda",
       class: "Twilight Domain Cleric",
       race: "Aasimar",
       alignment: "Lawful Good",
@@ -74,7 +75,7 @@ export const data = {
       assumenda harum eveniet est dolorem illum. Minus dolorem
       aperiam assumenda cum beatae?`,
       playersNotes: `Player's Notes.`,
-      art: anya,
+      art: flavian,
       card: cardPaladin,
     },
   ],

@@ -19,16 +19,13 @@ export default function Header() {
   }, []);
 
   return (
-    <>
-      <div className='headerPlaceholder'></div>
-      <div className='headerWrap'>
-        <div className='titleWrap' ref={titleRef}></div>
-        <div className='headerFront'></div>
-        <div className='subheadWrap'>
-          <div className='headerSpacer'></div>
-          <div className='subhead'>a DnD Podcast</div>
-        </div>
+    <div className='headerWrap'>
+      <div className='titleWrap' ref={titleRef}></div>
+      <div className='headerFront'></div>
+      <div className='subheadWrap'>
+        <div className='headerSpacer'></div>
+        <div className='subhead'>a DnD Podcast</div>
       </div>
-    </>
+    </div>
   );
 }

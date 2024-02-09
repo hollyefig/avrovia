@@ -13,49 +13,19 @@ function App() {
   const startAni = (e) => {
     gsap
       .timeline({ defaults: { duration: 0.7, ease: "power2.inOut" } })
-      .set(window, { scrollTo: { y: 0 } })
-      .to("body", { overflow: "hidden" })
-      .to(".headerWrap, .headerFront", { height: e.bgHeight, delay: 2 })
-      .to(".titleWrap", { top: e.titleTop }, "<")
-      .to(".sect1Wrap > *", { y: -20, opacity: 1, stagger: 0.2 })
-      .to("body", { overflow: "scroll" });
+      .to(".sect1Wrap > *", { y: -20, opacity: 1, stagger: 0.2, delay: 2.5 });
   };
 
   // * useEffect
   useEffect(() => {
-    const mobile = [
-      { bgHeight: 390, titleTop: 135 },
-      { bgHeight: 470, titleTop: -15 },
-    ];
-
-    const windowResize = (e) => {
-      // is mobile
-      if (e.target.outerWidth <= 768) {
-        gsap.set(".titleWrap", { top: -15 });
-      }
-      // is desktop
-      else {
-        gsap.set(".titleWrap", { top: 135 });
-      }
-    };
-
     // on load, start animation
     const onLoad = (e) => {
-      // if mobile
-      if (e.currentTarget.outerWidth <= 768) {
-        startAni(mobile[1]);
-      }
-      // if desktop
-      else if (e.currentTarget.outerWidth > 768) {
-        startAni(mobile[0]);
-      }
+      startAni();
     };
 
-    window.addEventListener("resize", (e) => windowResize(e));
     window.addEventListener("load", (e) => onLoad(e));
 
     return () => {
-      window.removeEventListener("resize", (e) => windowResize(e));
       window.removeEventListener("load", (e) => onLoad(e));
     };
   }, []);
