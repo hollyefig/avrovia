@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sect1.css";
 import Countdown from "./Countdown";
 import { data } from "../../data.js";
 import Svgs from "../Svgs.jsx";
-
+import gsap from "gsap";
 import followAdventure from "../../assets/images/followAdventure.png";
 
 export default function Sect1() {
   // ? determine session is live
   const [inSession, setInSession] = useState(false);
+
+  // * useEffect
+  useEffect(() => {
+    gsap
+      .timeline({ defaults: { duration: 0.7, ease: "power2.inOut" } })
+      .add(() => console.log("gsap"))
+      .to(".sect1Wrap > div", { y: -20, opacity: 1, stagger: 0.2, delay: 2.5 });
+  }, []);
 
   return (
     <div className='sect1Wrap'>

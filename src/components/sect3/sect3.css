@@ -138,6 +138,7 @@
     .sect3Bg {
         background-size: auto 100vh;
         padding: 15% 4%;
+        background-attachment: initial;
     }
     
 }
