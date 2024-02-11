@@ -3,6 +3,32 @@ import "./sect4.css";
 import { data } from "../../data.js";
 import gsap from "gsap";
 
+const useResize = (callback) => {
+  useEffect(() => {
+    const handleResize = () => {
+      callback();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [callback]);
+};
+
+const useKeydown = (callback) => {
+  useEffect(() => {
+    const handleKeydown = (e) => {
+      callback(e);
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [callback]);
+};
+
 export default function Sect4() {
   // ? refs
   const navHighlight = useRef(null);
@@ -116,39 +142,35 @@ export default function Sect4() {
     gsap.set("body", { overflow: "auto" });
   };
 
-  // * useEffect
-  useEffect(() => {
-    // adjust width for highligher in nav when resize
-    const getWidth = () => {
-      const hWidth = getComputedStyle(list.current.children[0]).width;
-      setHighlightWidth(hWidth);
-      const cWidth = getComputedStyle(carouselRef.current).width;
-      setCarouselWidth(cWidth);
-    };
+  // & handlers for useEffect
+  const handleResize = () => {
     const hWidth = getComputedStyle(list.current.children[0]).width;
     setHighlightWidth(hWidth);
     const cWidth = getComputedStyle(carouselRef.current).width;
     setCarouselWidth(cWidth);
+  };
 
-    // TODO need to adjust left/right, not perfect
-    // close gala
-    const keyDownFunc = (e) => {
-      if (e.key === "Escape") {
-        closeGala();
-      } else if (e.key === "ArrowRight") {
-        galaImg && galaShift("right");
-      } else if (e.key === "ArrowLeft") {
-        galaImg && galaShift("left");
-      }
-    };
+  const handleKeydown = (e) => {
+    if (e.key === "Escape") {
+      closeGala();
+    } else if (e.key === "ArrowRight") {
+      galaImg && galaShift("right");
+    } else if (e.key === "ArrowLeft") {
+      galaImg && galaShift("left");
+    }
+  };
 
-    window.addEventListener("resize", getWidth);
-    window.addEventListener("keydown", (e) => keyDownFunc(e));
-    return () => {
-      window.removeEventListener("resize", getWidth);
-      window.removeEventListener("keydown", (e) => keyDownFunc(e));
-    };
-  }, [list, setHighlightWidth, galaImg, galaShift]);
+  // Resize and keydown event listeners
+  useResize(handleResize);
+  useKeydown(handleKeydown);
+
+  // * useEffect
+  useEffect(() => {
+    // Initialize dimensions on mount
+    handleResize();
+
+    return () => {};
+  }, []);
 
   return (
     <div className='floralBgWrap'>
