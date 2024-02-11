@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import "./sect4.css";
 import { data } from "../../data.js";
 import gsap from "gsap";
@@ -81,33 +81,35 @@ export default function Sect4() {
 
   const galaArr = latest.info.tabs.gallery;
 
-  const [galaImg, setGalaImg] = useState();
+  const [galaImg, setGalaImg] = useState(null);
   // ! view gala
   const viewGala = (e, index) => {
-    console.log("view", e, index);
-    gsap.set(".blackOverlay", { display: "block" });
+    gsap.set(".blackOverlay", { display: "flex" });
     gsap.set("body", { overflow: "hidden" });
 
     setGalaImg({ img: e, index: index });
   };
 
   // ! shift gala
-  const galaShift = (e) => {
-    console.log(e);
-    if (e === "right") {
-      galaImg.index !== galaArr.length - 1 &&
-        setGalaImg({
-          img: galaArr[galaImg.index + 1],
-          index: galaImg.index + 1,
-        });
-    } else if (e === "left") {
-      galaImg.index !== 0 &&
-        setGalaImg({
-          img: galaArr[galaImg.index - 1],
-          index: galaImg.index - 1,
-        });
-    }
-  };
+  const galaShift = useCallback(
+    (e) => {
+      if (e === "right") {
+        galaImg.index !== galaArr.length - 1 &&
+          setGalaImg({
+            img: galaArr[galaImg.index + 1],
+            index: galaImg.index + 1,
+          });
+      } else if (e === "left") {
+        galaImg.index !== 0 &&
+          setGalaImg({
+            img: galaArr[galaImg.index - 1],
+            index: galaImg.index - 1,
+          });
+      }
+    },
+    [galaArr, galaImg]
+  );
+
   // ! close gala
   const closeGala = () => {
     gsap.set(".blackOverlay", { display: "none" });
@@ -128,24 +130,16 @@ export default function Sect4() {
     const cWidth = getComputedStyle(carouselRef.current).width;
     setCarouselWidth(cWidth);
 
+    // TODO need to adjust left/right, not perfect
     // close gala
     const keyDownFunc = (e) => {
       if (e.key === "Escape") {
         closeGala();
+      } else if (e.key === "ArrowRight") {
+        galaImg && galaShift("right");
+      } else if (e.key === "ArrowLeft") {
+        galaImg && galaShift("left");
       }
-      //  else if (e.key === "ArrowRight") {
-      //   galaImg.index !== galaArr.length - 1 &&
-      //     setGalaImg({
-      //       img: galaArr[galaImg.index + 1],
-      //       index: galaImg.index + 1,
-      //     });
-      // } else if (e.key === "ArrowLeft") {
-      //   galaImg.index !== 0 &&
-      //     setGalaImg({
-      //       img: galaArr[galaImg.index - 1],
-      //       index: galaImg.index - 1,
-      //     });
-      // }
     };
 
     window.addEventListener("resize", getWidth);
@@ -154,7 +148,7 @@ export default function Sect4() {
       window.removeEventListener("resize", getWidth);
       window.removeEventListener("keydown", (e) => keyDownFunc(e));
     };
-  }, [list, setHighlightWidth, galaImg, galaArr]);
+  }, [list, setHighlightWidth, galaImg, galaShift]);
 
   return (
     <div className='floralBgWrap'>
@@ -316,24 +310,17 @@ export default function Sect4() {
       </div>
       <div className='blackOverlay'>
         <div className='blackOverlayInner'>
-          <div className='white moveLeft'>
-            <span
-              className='material-symbols-outlined'
-              onClick={() => galaShift("left")}
-            >
-              arrow_back
-            </span>
+          <div className='white moveLeft' onClick={() => galaShift("left")}>
+            <span className='material-symbols-outlined'>arrow_back</span>
           </div>
           <div className='overlayText white galaImg'>
             <img src={galaImg && galaImg.img} alt='' />
           </div>
-          <div className='white moveRight'>
-            <span
-              className='material-symbols-outlined'
-              onClick={() => galaShift("right")}
-            >
-              arrow_forward
-            </span>
+          <div className='white closeGala' onClick={() => closeGala()}>
+            <span className='material-symbols-outlined'>cancel</span>
+          </div>
+          <div className='white moveRight' onClick={() => galaShift("right")}>
+            <span className='material-symbols-outlined'>arrow_forward</span>
           </div>
         </div>
       </div>
