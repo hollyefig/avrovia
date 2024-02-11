@@ -77,6 +77,43 @@ export default function Sect4() {
     setLatest({ info: e, index: index });
   };
 
+  // & gala stuff
+
+  const galaArr = latest.info.tabs.gallery;
+
+  const [galaImg, setGalaImg] = useState();
+  // ! view gala
+  const viewGala = (e, index) => {
+    console.log("view", e, index);
+    gsap.set(".blackOverlay", { display: "block" });
+    gsap.set("body", { overflow: "hidden" });
+
+    setGalaImg({ img: e, index: index });
+  };
+
+  // ! shift gala
+  const galaShift = (e) => {
+    console.log(e);
+    if (e === "right") {
+      galaImg.index !== galaArr.length - 1 &&
+        setGalaImg({
+          img: galaArr[galaImg.index + 1],
+          index: galaImg.index + 1,
+        });
+    } else if (e === "left") {
+      galaImg.index !== 0 &&
+        setGalaImg({
+          img: galaArr[galaImg.index - 1],
+          index: galaImg.index - 1,
+        });
+    }
+  };
+  // ! close gala
+  const closeGala = () => {
+    gsap.set(".blackOverlay", { display: "none" });
+    gsap.set("body", { overflow: "auto" });
+  };
+
   // * useEffect
   useEffect(() => {
     // adjust width for highligher in nav when resize
@@ -91,13 +128,33 @@ export default function Sect4() {
     const cWidth = getComputedStyle(carouselRef.current).width;
     setCarouselWidth(cWidth);
 
+    // close gala
+    const keyDownFunc = (e) => {
+      if (e.key === "Escape") {
+        closeGala();
+      }
+      //  else if (e.key === "ArrowRight") {
+      //   galaImg.index !== galaArr.length - 1 &&
+      //     setGalaImg({
+      //       img: galaArr[galaImg.index + 1],
+      //       index: galaImg.index + 1,
+      //     });
+      // } else if (e.key === "ArrowLeft") {
+      //   galaImg.index !== 0 &&
+      //     setGalaImg({
+      //       img: galaArr[galaImg.index - 1],
+      //       index: galaImg.index - 1,
+      //     });
+      // }
+    };
+
     window.addEventListener("resize", getWidth);
+    window.addEventListener("keydown", (e) => keyDownFunc(e));
     return () => {
       window.removeEventListener("resize", getWidth);
+      window.removeEventListener("keydown", (e) => keyDownFunc(e));
     };
-  }, [list, setHighlightWidth]);
-
-  console.log();
+  }, [list, setHighlightWidth, galaImg, galaArr]);
 
   return (
     <div className='floralBgWrap'>
@@ -151,7 +208,7 @@ export default function Sect4() {
                 </div>
                 {/* video  */}
                 <div className='seshVideo'>
-                  {latest.info.tabs.video && (
+                  {latest.info.tabs.video ? (
                     <iframe
                       src={latest.info.tabs.video}
                       title='YouTube video player'
@@ -159,9 +216,22 @@ export default function Sect4() {
                       allowFullScreen
                       className='videoEmbed'
                     ></iframe>
+                  ) : (
+                    <div className='noVid'>No video for this session</div>
                   )}
                 </div>
-                <div className='seshGallery'>{latest.info.tabs.gallery}</div>
+                {/* gallery */}
+                <div className='seshGallery'>
+                  {latest.info.tabs.gallery.map((e, index) => (
+                    <img
+                      src={e}
+                      alt={index}
+                      key={index}
+                      id={`gala${index}`}
+                      onClick={() => viewGala(e, index)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -243,6 +313,29 @@ export default function Sect4() {
           </div>
         </div>
         {/* end footer */}
+      </div>
+      <div className='blackOverlay'>
+        <div className='blackOverlayInner'>
+          <div className='white moveLeft'>
+            <span
+              className='material-symbols-outlined'
+              onClick={() => galaShift("left")}
+            >
+              arrow_back
+            </span>
+          </div>
+          <div className='overlayText white galaImg'>
+            <img src={galaImg && galaImg.img} alt='' />
+          </div>
+          <div className='white moveRight'>
+            <span
+              className='material-symbols-outlined'
+              onClick={() => galaShift("right")}
+            >
+              arrow_forward
+            </span>
+          </div>
+        </div>
       </div>
       <div className='spacerFooter'></div>
     </div>

@@ -9,6 +9,26 @@ import cardRanger from "./assets/images/cardRanger.png";
 import cardCleric from "./assets/images/cardCleric.png";
 import cardPaladin from "./assets/images/cardPaladin.png";
 
+import { galleryArr } from "./galleryImport";
+
+const getRandomGala = () => {
+  let randomArr = [];
+  let usedIndexes = new Set();
+
+  while (randomArr.length < 9) {
+    const randomIndex = Math.floor(Math.random() * galleryArr.length);
+
+    if (!usedIndexes.has(randomIndex)) {
+      const res = galleryArr[randomIndex];
+      randomArr.push(res);
+
+      usedIndexes.add(randomIndex);
+    }
+  }
+
+  return randomArr;
+};
+
 export const data = {
   socials: ["discord", "twitch", "youtube"],
   cast: [
@@ -90,7 +110,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -103,7 +123,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -115,7 +135,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -126,7 +146,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -138,7 +158,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -151,7 +171,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -163,8 +183,8 @@ export const data = {
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.\n\n" +
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
-        video: null,
-        gallery: "gallery",
+        video: "https://www.youtube.com/embed/IYWgYjr7hic?si=vmldIJhYQXoJAA1s",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -172,8 +192,8 @@ export const data = {
       tabs: {
         summary:
           "I'm kind of worried about Miso... She went off, trying to find her pet Pumpkin Pie, but it has been over a day since we have seen her... I hope she's alright. She did say that Pumpkin Pie loves spicy things....",
-        video: null,
-        gallery: "gallery",
+        video: "https://www.youtube.com/embed/N5Q6m4oq32A?si=o_Ow_-cGPMW3AJAd",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -186,7 +206,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -195,7 +215,7 @@ export const data = {
         summary:
           "The Danger Woods are a dense forest located on the outskirts of Piri. Despite its name, the woods are known for their stunning beauty, with towering trees and vibrant foliage covering the landscape. However, the Danger Woods are also home to a variety of dangerous plants and animals, making it a treacherous place for travellers. The flowers in the Danger Woods are particularly notable, with many species growing to enormous sizes. Some of these flowers are poisonous or have other harmful properties, making them a potential hazard for those who wander too close. ",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -208,7 +228,7 @@ export const data = {
           "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -220,7 +240,7 @@ export const data = {
           "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -233,7 +253,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -246,7 +266,7 @@ export const data = {
           "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -260,7 +280,7 @@ export const data = {
           "In aliquam morbi vitae convallis. Ut rutrum nunc scelerisque maecenas in metus. Sed sed vel rhoncus sit. Diam arcu aliquam neque vel ipsum nisl dictumst nam.\n\n" +
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.",
         video: null,
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -272,8 +292,8 @@ export const data = {
           "Nisl ligula maecenas purus eros elit accumsan varius. Volutpat integer non purus sapien nisl Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus.\n\n" +
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
-        video: null,
-        gallery: "gallery",
+        video: "https://www.youtube.com/embed/w08HCsad1vw?si=YxGIJNWXxw6hpEJM",
+        gallery: getRandomGala(),
       },
     },
     {
@@ -286,7 +306,7 @@ export const data = {
           "In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et interdum. Feugiat dui ut ornare sit venenatis elementum. Vel at commodo quis dignissim commodo nec tempus. Tortor cum ac elit pretium. In nec auctor pharetra et. Et morbi pulvinar faucibus facilisi. Eleifend pellentesque feugiat sit arcu. Molestie lacus iaculis neque nam euismod posuere tincidunt sit. Mi facilisis accumsan tristique quam.\n\n" +
           "Risus ultrices egestas lacus ut dictumst pharetra quam mollis. Scelerisque est at et nulla odio non aliquam faucibus. In rhoncus ut dis ultricies orci. Penatibus nam morbi feugiat orci nullam non feugiat leo tempor. Eu nulla neque porta viverra a sodales et",
         video: "https://www.youtube.com/embed/w08HCsad1vw?si=YxGIJNWXxw6hpEJM",
-        gallery: "gallery",
+        gallery: getRandomGala(),
       },
     },
   ],

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./sect3.css";
 import { musicData } from "./music";
-import ReactAudioPlayer from "react-audio-player";
+import Audioelement from "./Audioelement";
+// import ReactAudioPlayer from "react-audio-player";
 
 export default function Sect3() {
   const [track, setTrack] = useState();
@@ -9,6 +10,8 @@ export default function Sect3() {
   const songSelect = (e) => {
     setTrack(e);
   };
+
+  const audioRef = useRef(null);
 
   return (
     <div className='sect3Wrap'>
@@ -22,7 +25,7 @@ export default function Sect3() {
               <span className='songTitle displayFont displaySmall'>
                 {track ? track.name : <>-</>}
               </span>
-              <ReactAudioPlayer src={track && track.mp3} autoPlay controls />
+              <Audioelement track={track} />
             </div>
           </div>
           <div className='sect3Right'>

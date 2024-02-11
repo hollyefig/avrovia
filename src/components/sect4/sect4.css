@@ -109,7 +109,8 @@
 
 .seshCarouselFrame {
     width: 100%;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .seshCarousel {
@@ -141,6 +142,38 @@
       padding: 0 20px;
       border: none;
 }
+
+.noVid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: var(--darkGrey)
+}
+
+/* ? gallery  */
+
+.seshGallery {
+    display:grid;
+    grid-template-columns: repeat(3, .8fr);
+    grid-auto-flow: row;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.seshGallery img {
+    width: 100%;
+    opacity: .4;
+    cursor: pointer;
+}
+
+.seshGallery img:hover {
+    opacity: 1;
+}
+
+
 
 /* * right side  */
 

@@ -4,17 +4,46 @@ import Countdown from "./Countdown";
 import { data } from "../../data.js";
 import Svgs from "../Svgs.jsx";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import followAdventure from "../../assets/images/followAdventure.png";
 
+gsap.registerPlugin(ScrollToPlugin);
 export default function Sect1() {
   // ? determine session is live
   const [inSession, setInSession] = useState(false);
+
+  const startTimeInEST = new Date("2024-02-12T20:00:00");
+
+  // Get the user's local time zone offset
+  const userTimeZoneOffset = new Date().getTimezoneOffset();
+
+  // Calculate the start time in the user's local time zone
+  const startTimeInUserTimeZone = new Date(
+    startTimeInEST.getTime() - userTimeZoneOffset * 60000
+  );
+
+  const startTime = {
+    weekday: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
+      startTimeInUserTimeZone
+    ),
+    hour: new Intl.DateTimeFormat("en-GB", {
+      hour: "numeric",
+      minute: "numeric",
+    }).format(startTimeInUserTimeZone),
+  };
+
+  const scrollToSesh = () => {
+    gsap.to(window, {
+      scrollTo: { y: ".sect4Wrap", offsetY: 100 },
+      ease: "power2.inOut",
+      duration: 1,
+    });
+  };
 
   // * useEffect
   useEffect(() => {
     gsap
       .timeline({ defaults: { duration: 0.7, ease: "power2.inOut" } })
-      .add(() => console.log("gsap"))
       .to(".sect1Wrap > div", { y: -20, opacity: 1, stagger: 0.2, delay: 2.5 });
   }, []);
 
@@ -45,7 +74,9 @@ export default function Sect1() {
 
         <div className='sect1Right'>
           <span className='pink fontBold copyMedium'>
-            <em>Mondays @ 3pm EST</em>
+            <em>
+              {startTime.weekday}s @ {startTime.hour}
+            </em>
           </span>
           <span className='copyDefault green'>
             <p>
@@ -57,6 +88,12 @@ export default function Sect1() {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Repudiandae debitis excepturi architecto ipsum
+            </p>
+            <p
+              className='pink uppercase viewSesh'
+              onClick={() => scrollToSesh()}
+            >
+              View Sessions
             </p>
           </span>
 

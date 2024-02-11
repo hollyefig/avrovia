@@ -71,6 +71,15 @@
     display: inline-block;
 }
 
+.viewSesh {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.viewSesh:hover {
+    color: var(--darkPink)
+}
+
 .iconSocialsWrap {
     display: flex;
     flex-direction: row;
@@ -85,11 +94,14 @@
     align-items: center;
     flex-direction: column;
     text-transform: uppercase;
-    cursor: pointer;
 }
 
 .iconSocial span {
     padding: 20px 0 0 0;
+}
+
+.iconSocial svg {
+    cursor: pointer;
 }
 
 .iconCircle {
