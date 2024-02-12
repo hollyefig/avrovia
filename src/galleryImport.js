@@ -33,6 +33,7 @@ import g32 from "./assets/images/gallery/gallery32.png";
 import g33 from "./assets/images/gallery/gallery33.png";
 import g34 from "./assets/images/gallery/gallery34.png";
 import g35 from "./assets/images/gallery/gallery35.png";
+import g36 from "./assets/images/gallery/gallery36.png";
 
 export const galleryArr = [
   g1,
@@ -70,4 +71,5 @@ export const galleryArr = [
   g33,
   g34,
   g35,
+  g36,
 ];

@@ -114,23 +114,34 @@ export default function Sect4() {
     gsap.set("body", { overflow: "hidden" });
 
     setGalaImg({ img: e, index: index });
+    index === 0 && gsap.set(".moveRight", { opacity: 0.3 });
+    index === galaArr.length - 1 && gsap.set(".moveLeft", { opacity: 0.3 });
   };
 
   // ! shift gala
   const galaShift = useCallback(
     (e) => {
       if (e === "right") {
+        gsap.set(".moveLeft", { opacity: 1 });
         galaImg.index !== galaArr.length - 1 &&
           setGalaImg({
             img: galaArr[galaImg.index + 1],
             index: galaImg.index + 1,
           });
+
+        galaImg.index === galaArr.length - 2 &&
+          gsap.set(".moveRight", { opacity: 0.3 });
       } else if (e === "left") {
-        galaImg.index !== 0 &&
+        if (galaImg.index !== 0) {
+          gsap.set(".moveRight", { opacity: 1 });
           setGalaImg({
             img: galaArr[galaImg.index - 1],
             index: galaImg.index - 1,
           });
+          if (galaImg.index === 1) {
+            gsap.set(".moveLeft", { opacity: 0.3 });
+          }
+        }
       }
     },
     [galaArr, galaImg]
