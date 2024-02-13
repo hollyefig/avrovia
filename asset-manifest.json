@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/avrovia/static/css/main.be64a302.css",
-    "main.js": "/avrovia/static/js/main.c859d4dc.js",
+    "main.css": "/avrovia/static/css/main.9dd28be3.css",
+    "main.js": "/avrovia/static/js/main.3759e404.js",
     "static/media/Avrovia.mp3": "/avrovia/static/media/Avrovia.9dc0fffb60c8d17aa207.mp3",
     "static/media/SoulsofSardinia_NecroticWaters.mp3": "/avrovia/static/media/SoulsofSardinia_NecroticWaters.8ef8d241567e5257e5c2.mp3",
     "static/media/gallery3.png": "/avrovia/static/media/gallery3.e837598b24e333a79d5c.png",
@@ -50,6 +50,7 @@
     "static/media/gallery22.png": "/avrovia/static/media/gallery22.6ecb0f7ff3d6285eb228.png",
     "static/media/gallery1.png": "/avrovia/static/media/gallery1.4b8b93b5fd0a29144ce9.png",
     "static/media/sect3Bg.jpg": "/avrovia/static/media/sect3Bg.558c3448e77a047dae91.jpg",
+    "static/media/gallery36.png": "/avrovia/static/media/gallery36.fcb9e8bbc5da45411762.png",
     "static/media/gallery7.png": "/avrovia/static/media/gallery7.39d4de58d2ad3a3c8010.png",
     "static/media/CalmingChime.mp3": "/avrovia/static/media/CalmingChime.ec213bb80a4219f01cb9.mp3",
     "static/media/gallery29.png": "/avrovia/static/media/gallery29.bc1ce88261672e96d4e2.png",
@@ -91,11 +92,11 @@
     "static/media/avroviaTitleMobile.png": "/avrovia/static/media/avroviaTitleMobile.216431adf59f39e4a245.png",
     "static/media/avroviaTitle.png": "/avrovia/static/media/avroviaTitle.8737b7f62d55fd2a6ede.png",
     "index.html": "/avrovia/index.html",
-    "main.be64a302.css.map": "/avrovia/static/css/main.be64a302.css.map",
-    "main.c859d4dc.js.map": "/avrovia/static/js/main.c859d4dc.js.map"
+    "main.9dd28be3.css.map": "/avrovia/static/css/main.9dd28be3.css.map",
+    "main.3759e404.js.map": "/avrovia/static/js/main.3759e404.js.map"
   },
   "entrypoints": [
-    "static/css/main.be64a302.css",
-    "static/js/main.c859d4dc.js"
+    "static/css/main.9dd28be3.css",
+    "static/js/main.3759e404.js"
   ]
 }
