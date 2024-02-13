@@ -12,7 +12,7 @@ export default function Sect1() {
   // ? determine session is live
   const [inSession, setInSession] = useState(false);
 
-  const startTimeInEST = new Date("2024-02-12T20:00:00");
+  const startTimeInEST = new Date("2024-02-12T19:00:00");
 
   // Get the user's local time zone offset
   const userTimeZoneOffset = new Date().getTimezoneOffset();

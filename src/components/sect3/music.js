@@ -36,133 +36,166 @@ export const musicData = [
   {
     name: "Avrovia",
     mp3: Avrovia,
+    dur: 377,
   },
   {
     name: "You Wouldn't Marry a Snail ~ Anya's Theme",
     mp3: anyaTheme,
+    dur: 249,
   },
   {
     name: "When Wisterias Bloom ~ Laerune's Theme",
     mp3: laeruneTheme,
+    dur: 182,
   },
   {
     name: "Schrei der Unterwerfung ~ Boss Battle",
     mp3: schreider,
+    dur: 237,
   },
   {
     name: "Rhyolite ~ Kingdom of Rain",
     mp3: Rhyolite,
+    dur: 252,
   },
   {
     name: "Palace of the Tides",
     mp3: palaceTides,
+    dur: 202,
   },
   {
     name: "Mother Mouse ~ Nola's Theme",
     mp3: motherMouse,
+    dur: 242,
   },
   {
     name: "Helianthe ~ Kingdom of the Evergreen Forest",
     mp3: helian,
+    dur: 235,
   },
   {
     name: "Galantus ~ Kingdom of Frost",
     mp3: galantus,
+    dur: 265,
   },
   {
     name: "Forever a Bestie ~ Dara's Theme",
     mp3: dara,
+    dur: 240,
   },
   {
     name: "Eostre ~ Kingdom of Blossoms",
     mp3: eostre,
+    dur: 285,
   },
   {
     name: "Diary Doodles ~ Mathilda's Theme",
     mp3: mathilda,
+    dur: 226,
   },
   {
     name: "Child of Sun ~ Ashar's Theme",
     mp3: ashar,
+    dur: 220,
   },
   {
     name: "Calming Chime",
     mp3: chime,
+    dur: 55,
   },
   {
     name: "Astraia ~ Kingdom of the Night",
     mp3: astraia,
+    dur: 213,
   },
   {
     name: "Aragonite ~ Kingdom of Sunlight",
     mp3: aragonite,
+    dur: 234,
   },
   {
     name: "A Monster No More ~ Narrok's Theme",
     mp3: narrok,
+    dur: 174,
   },
   {
     name: "Ambermorion ~ Kingdom of Harvest",
     mp3: harvest,
+    dur: 238,
   },
   {
     name: "Souls of Sardinia ~ Necrotic Waters",
     mp3: waters,
+    dur: 350,
   },
   {
     name: "Party Jam Session",
     mp3: jam,
+    dur: 128,
   },
   {
     name: "More than a Myth ~ Myth's Theme",
     mp3: myth,
+    dur: 194,
   },
   {
     name: "Maybe You Would Marry a Snail",
     mp3: marrySnail,
+    dur: 148,
   },
   {
     name: "Man of Many Things ~ Ilvaaj's Theme",
     mp3: ilvaaj,
+    dur: 266,
   },
   {
     name: "Fish be Love",
     mp3: fishBe,
+    dur: 186,
   },
   {
     name: "Child of Sea ~ Shula's Theme",
     mp3: shula,
+    dur: 301,
   },
   {
     name: "Avrovia's Shining Pearl ~ Sardinia",
     mp3: sardinia,
+    dur: 208,
   },
   {
     name: "A Temporary Goodbye",
     mp3: bye,
+    dur: 154,
   },
   {
     name: "The Encounter",
     mp3: encounter,
+    dur: 269,
   },
   {
     name: "Temple of Change",
     mp3: change,
+    dur: 227,
   },
   {
     name: "Tako is NOT a Familiar ~ Tako's Theme",
     mp3: takos,
+    dur: 250,
   },
   {
     name: "Most Valuable Priestess ~ Suiren's Theme",
     mp3: suiren,
+    dur: 274,
   },
   {
     name: "Neverday Forest",
     mp3: neverday,
+    dur: 227,
   },
   {
     name: "Handsome Honourable Horse ~ Flavian's Theme",
     mp3: flavian,
+    dur: 271,
   },
 ];

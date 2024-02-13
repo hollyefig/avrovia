@@ -8,7 +8,7 @@ const getNextMonday = () => {
     currentDate.getUTCFullYear(),
     currentDate.getUTCMonth(),
     currentDate.getUTCDate() + daysUntilMonday,
-    15,
+    14,
     0,
     0,
     0

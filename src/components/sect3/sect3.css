@@ -23,7 +23,6 @@
 
 .sect3Flex > div {
     flex: 1;
-    overflow-x: hidden;
 }
 
 .sect3Left, .sect3Right {
@@ -35,13 +34,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .musicSubhead {
+    --size: 80px;
+    --width: 120px;
+    width: var(--width);
     position: absolute;
-    top: -9.5%;
-    left: -2%;
+    top: calc(var(--size) / -4);
+    left: calc(50% - var(--width) / 2);
     font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicSubhead .musicSym {
+    fill: var(--lightWhite);
+    width: 100%;
+    position: absolute;
+}
+
+.soundProg {
+    position: absolute;
+    stroke: var(--pink);
+    stroke-width: 7;
+    fill: none;
+}
+
+.parentSoundProg {
+    transform: rotate(270deg);
 }
 
 .player {
@@ -64,6 +87,7 @@
     flex-direction: column;
     row-gap: 29px;
     background-color: var(--brown);
+    
 }
 
 .song {
@@ -104,6 +128,8 @@
     font-style: italic;
 }
 
+
+
 /* & responsive */
 @media only screen and (max-width:768px) {
     .sect3Flex {
@@ -121,14 +147,8 @@
         max-height: 200px;
     }
 
-    .musicSubhead {
-        top: -24px;
-        left: 0;
-        font-size: 50px;
-    }
-
     .songTitle {
-            padding: 40px 0 0 0;
+            padding: 65px 0 0 0;
             display: inline-block;
     }
 }
