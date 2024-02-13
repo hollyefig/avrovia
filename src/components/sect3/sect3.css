@@ -76,8 +76,47 @@
     padding: 0 5%;
 }
 
-.player > audio {
+.audioControls {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+}
+
+.audioControls > * {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.audioControls svg {
+    fill: var(--lightWhite);
+}
+
+.playPause {
+    display: flex;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 70px;
+}
+
+.minus10 svg, .plus10 svg {
+    width: 40px
+}
+
+.minus10 {
+    justify-content: flex-end;
+}
+
+.plus10 {
+    justify-content: flex-start;
+}
+
+.playBtn {
+    height: 50px;
+    justify-content: center;
 }
 
 .sect3Right {

@@ -54,6 +54,23 @@ export default function Sect3() {
     }
   };
 
+  const seek = (e) => {
+    if (e === "add") {
+      if (audio.currentTime + 10 < audio.duration) {
+        audio.currentTime += 10;
+      }
+      tl.current.seek(tl.current._time + 10);
+    } else if (e === "sub") {
+      if (audio.currentTime > 10) {
+        audio.currentTime -= 10;
+        tl.current.seek(tl.current._time - 10);
+      } else if (audio.currentTime < 10) {
+        audio.currentTime = 0;
+        tl.current.restart();
+      }
+    }
+  };
+
   useEffect(() => {
     tl.current = gsap.timeline({
       defaults: {
@@ -70,14 +87,14 @@ export default function Sect3() {
           <div className='sect3Left'>
             <span className='white musicSubhead'>
               <svg
-                width={svgWidth + 20}
-                height={svgWidth + 20}
+                width='100'
+                height='100'
                 xmlns='http://www.w3.org/2000/svg'
                 className='parentSoundProg'
               >
                 <circle
-                  cx={svgWidth / 2 + 10}
-                  cy={svgWidth / 2 + 10}
+                  cx='50'
+                  cy='50'
                   r='43'
                   className='soundProg'
                   pathLength='100'
@@ -90,8 +107,8 @@ export default function Sect3() {
                 xmlns='http://www.w3.org/2000/svg'
                 xmlnsXlink='http://www.w3.org/1999/xlink'
                 className='musicSym'
-                width={svgWidth}
-                height={svgWidth}
+                width='80'
+                height='80'
               >
                 <use href='#musicSym'></use>
               </svg>
@@ -100,8 +117,55 @@ export default function Sect3() {
               <span className='songTitle displayFont displaySmall'>
                 {track ? track.name : <em>Choose a song</em>}
               </span>
-
-              <span onClick={() => pauseSong()}>{play ? "pause" : "play"}</span>
+              {/* audio controls  */}
+              <div className='audioControls'>
+                <span className='minus10' onClick={() => seek("sub")}>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlnsXlink='http://www.w3.org/1999/xlink'
+                    width='56'
+                    height='42'
+                  >
+                    <use href='#minus10'></use>
+                  </svg>
+                </span>
+                <span
+                  className='playPause material-symbols-outlined'
+                  onClick={() => pauseSong()}
+                >
+                  {play ? (
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      xmlnsXlink='http://www.w3.org/1999/xlink'
+                      className='playBtn'
+                      width='44'
+                      height='60'
+                    >
+                      <use href='#pauseBtn'></use>
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      xmlnsXlink='http://www.w3.org/1999/xlink'
+                      className='playBtn'
+                      width='47'
+                      height='60'
+                    >
+                      <use href='#playBtn'></use>
+                    </svg>
+                  )}
+                </span>
+                <span className='plus10' onClick={() => seek("add")}>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlnsXlink='http://www.w3.org/1999/xlink'
+                    width='56'
+                    height='42'
+                  >
+                    <use href='#plus10'></use>
+                  </svg>
+                </span>
+              </div>
 
               {/* <audio controls autoPlay src={track && track.mp3}></audio> */}
             </div>
