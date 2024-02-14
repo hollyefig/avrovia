@@ -113,9 +113,11 @@ export default function Sect4() {
     gsap.set(".blackOverlay", { display: "flex" });
     gsap.set("body", { overflow: "hidden" });
 
+    console.log(index);
+
     setGalaImg({ img: e, index: index });
-    index === 0 && gsap.set(".moveRight", { opacity: 0.3 });
-    index === galaArr.length - 1 && gsap.set(".moveLeft", { opacity: 0.3 });
+    index === 0 && gsap.set(".moveLeft", { opacity: 0.3 });
+    index === galaArr.length - 1 && gsap.set(".moveRight", { opacity: 0.3 });
   };
 
   // ! shift gala
@@ -159,7 +161,6 @@ export default function Sect4() {
             .to(".galaImgEl", { x: -20 }, "<")
             .to(".galaImgEl", { x: 0 })
             .to(".galaImgEl", { opacity: 1 }, "<");
-
           if (galaImg.index === 1) {
             gsap.set(".moveLeft", { opacity: 0.3 });
           }

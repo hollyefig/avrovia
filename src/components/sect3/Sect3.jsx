@@ -86,6 +86,43 @@ export default function Sect3() {
       <Svgs />
       <div className='sect3Bg'>
         <div className='sect3Flex'>
+          {/* RIGHT Side */}
+          <div className='sect3Right'>
+            {musicData.map((e, index) => {
+              const num = index + 1;
+              return (
+                <div
+                  className='song copyFont'
+                  key={e.name}
+                  onClick={() => songSelect(e)}
+                >
+                  <span className='songPlaying'>
+                    <div
+                      className='activeSong'
+                      style={
+                        track !== undefined && track.name === e.name
+                          ? { opacity: "1" }
+                          : {}
+                      }
+                    ></div>
+                  </span>
+                  <span className='songNum'>{num < 10 ? `0${num}` : num}</span>
+                  <span
+                    className='songName'
+                    style={
+                      track !== undefined && track.name === e.name
+                        ? { textShadow: "0px 0px 8px #ffffff", opacity: "1" }
+                        : {}
+                    }
+                  >
+                    {e.name}
+                  </span>
+                  <span className='songLength'></span>
+                </div>
+              );
+            })}
+          </div>
+          {/* LEFT Side */}
           <div className='sect3Left'>
             <span className='white musicSubhead'>
               <svg
@@ -171,41 +208,6 @@ export default function Sect3() {
 
               {/* <audio controls autoPlay src={track && track.mp3}></audio> */}
             </div>
-          </div>
-          <div className='sect3Right'>
-            {musicData.map((e, index) => {
-              const num = index + 1;
-              return (
-                <div
-                  className='song copyFont'
-                  key={e.name}
-                  onClick={() => songSelect(e)}
-                >
-                  <span className='songPlaying'>
-                    <div
-                      className='activeSong'
-                      style={
-                        track !== undefined && track.name === e.name
-                          ? { opacity: "1" }
-                          : {}
-                      }
-                    ></div>
-                  </span>
-                  <span className='songNum'>{num < 10 ? `0${num}` : num}</span>
-                  <span
-                    className='songName'
-                    style={
-                      track !== undefined && track.name === e.name
-                        ? { textShadow: "0px 0px 8px #ffffff", opacity: "1" }
-                        : {}
-                    }
-                  >
-                    {e.name}
-                  </span>
-                  <span className='songLength'></span>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>
