@@ -3,7 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 4%;
+    padding: 8% 4%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,11 +70,13 @@
 .player {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 30px;
     width: 100%;
     max-width: 425px;
     padding: 0 5%;
+    margin: 50px 0 0 0px;
 }
+
 
 .audioControls {
     display: flex;
@@ -103,7 +105,7 @@
 }
 
 .minus10 svg, .plus10 svg {
-    width: 40px
+    width: 30px
 }
 
 .minus10 {
@@ -115,17 +117,18 @@
 }
 
 .playBtn {
-    height: 50px;
+    height: 40px;
     justify-content: center;
 }
 
 .sect3Right {
-    height: 300px;
+    height: 230px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    row-gap: 29px;
+    row-gap: 20px;
     background-color: var(--brown);
+    font-size: 15px;
     
 }
 
@@ -178,18 +181,20 @@
         max-width: 425px;
     }
 
+    .sect3Right {
+        overflow-x: hidden;
+    }
+
     .player {
         max-width: none;
+        margin: 70px 0 0 0;
     }
 
     .sect3Right {
         max-height: 200px;
     }
 
-    .songTitle {
-            padding: 65px 0 0 0;
-            display: inline-block;
-    }
+    
 }
 
 

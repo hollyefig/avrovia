@@ -7,7 +7,6 @@ import gsap from "gsap";
 
 export default function Sect3() {
   // & music svg stuff
-  const [svgWidth, setSvgWidth] = useState(80);
 
   // & song
   const [track, setTrack] = useState();
@@ -42,6 +41,7 @@ export default function Sect3() {
     newAudio.play();
   };
 
+  // ! pause/ play
   const pauseSong = () => {
     if (audio.paused) {
       tl.current.resume();
@@ -54,6 +54,7 @@ export default function Sect3() {
     }
   };
 
+  // ! seek
   const seek = (e) => {
     if (e === "add") {
       if (audio.currentTime + 10 < audio.duration) {
@@ -71,6 +72,7 @@ export default function Sect3() {
     }
   };
 
+  // * UseEffect
   useEffect(() => {
     tl.current = gsap.timeline({
       defaults: {
@@ -131,7 +133,7 @@ export default function Sect3() {
                 </span>
                 <span
                   className='playPause material-symbols-outlined'
-                  onClick={() => pauseSong()}
+                  onClick={() => track && pauseSong()}
                 >
                   {play ? (
                     <svg
