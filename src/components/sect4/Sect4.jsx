@@ -135,8 +135,8 @@ export default function Sect4() {
                 index: galaImg.index + 1,
               })
             )
-            .to(".galaImgEl", { x: 40 }, "<")
-            .to(".galaImgEl", { x: 20 })
+            .to(".galaImgEl", { x: 20 }, "<")
+            .to(".galaImgEl", { x: 0 })
             .to(".galaImgEl", { opacity: 1 }, "<");
         }
 
@@ -156,8 +156,8 @@ export default function Sect4() {
                 index: galaImg.index - 1,
               })
             )
-            .to(".galaImgEl", { x: -40 }, "<")
-            .to(".galaImgEl", { x: -20 })
+            .to(".galaImgEl", { x: -20 }, "<")
+            .to(".galaImgEl", { x: 0 })
             .to(".galaImgEl", { opacity: 1 }, "<");
 
           if (galaImg.index === 1) {
