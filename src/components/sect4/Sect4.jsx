@@ -123,21 +123,43 @@ export default function Sect4() {
     (e) => {
       if (e === "right") {
         gsap.set(".moveLeft", { opacity: 1 });
-        galaImg.index !== galaArr.length - 1 &&
-          setGalaImg({
-            img: galaArr[galaImg.index + 1],
-            index: galaImg.index + 1,
-          });
+        if (galaImg.index !== galaArr.length - 1) {
+          // ~ animation
+          gsap
+            .timeline({ defaults: { duration: 0.3 } })
+            .to(".galaImgEl", { opacity: 0 })
+            .to(".galaImgEl", { x: -20 }, "<")
+            .add(() =>
+              setGalaImg({
+                img: galaArr[galaImg.index + 1],
+                index: galaImg.index + 1,
+              })
+            )
+            .to(".galaImgEl", { x: 40 }, "<")
+            .to(".galaImgEl", { x: 20 })
+            .to(".galaImgEl", { opacity: 1 }, "<");
+        }
 
         galaImg.index === galaArr.length - 2 &&
           gsap.set(".moveRight", { opacity: 0.3 });
       } else if (e === "left") {
         if (galaImg.index !== 0) {
           gsap.set(".moveRight", { opacity: 1 });
-          setGalaImg({
-            img: galaArr[galaImg.index - 1],
-            index: galaImg.index - 1,
-          });
+          // ~ animation
+          gsap
+            .timeline({ defaults: { duration: 0.3 } })
+            .to(".galaImgEl", { opacity: 0 })
+            .to(".galaImgEl", { x: 20 }, "<")
+            .add(() =>
+              setGalaImg({
+                img: galaArr[galaImg.index - 1],
+                index: galaImg.index - 1,
+              })
+            )
+            .to(".galaImgEl", { x: -40 }, "<")
+            .to(".galaImgEl", { x: -20 })
+            .to(".galaImgEl", { opacity: 1 }, "<");
+
           if (galaImg.index === 1) {
             gsap.set(".moveLeft", { opacity: 0.3 });
           }
@@ -347,7 +369,9 @@ export default function Sect4() {
             <span className='material-symbols-outlined'>arrow_back</span>
           </div>
           <div className='overlayText white galaImg'>
-            <img src={galaImg && galaImg.img} alt='' />
+            <div className='imgLeft' onClick={() => galaShift("left")}></div>
+            <img src={galaImg && galaImg.img} alt='' className='galaImgEl' />
+            <div className='imgRight' onClick={() => galaShift("right")}></div>
           </div>
           <div className='white closeGala' onClick={() => closeGala()}>
             <span className='material-symbols-outlined'>cancel</span>

@@ -152,27 +152,6 @@
     color: var(--darkGrey)
 }
 
-/* ? gallery  */
-
-.seshGallery {
-    display:grid;
-    grid-template-columns: repeat(3, .8fr);
-    grid-auto-flow: row;
-    gap: 20px;
-    overflow-y: scroll;
-    height: 50vh;
-}
-
-.seshGallery img {
-    width: 100%;
-    opacity: .4;
-    cursor: pointer;
-}
-
-.seshGallery img:hover {
-    opacity: 1;
-}
-
 
 
 /* * right side  */
@@ -237,6 +216,50 @@
 
 .prevSeshLink:hover {
     color: #000;
+}
+
+/* ? gallery  */
+
+.seshGallery {
+    display:grid;
+    grid-template-columns: repeat(3, .8fr);
+    grid-auto-flow: row;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.seshGallery img {
+    width: 100%;
+    opacity: .4;
+    cursor: pointer;
+}
+
+.seshGallery img:hover {
+    opacity: 1;
+}
+
+.overlayText {
+    position: relative;
+}
+
+.overlayText > div {
+    position: absolute;
+    z-index: 15;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.imgLeft {
+    left: 0;
+}
+.imgRight {
+    right: 0;
+}
+
+.closeGala {
+    color: #ff1a1c;
 }
 
 /* * footer  */
