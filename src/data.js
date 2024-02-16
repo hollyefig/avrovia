@@ -1,6 +1,7 @@
 import anya from "./assets/images/imgAnya.jpg";
 import mathilda from "./assets/images/imgMathilda.jpg";
 import flavian from "./assets/images/imgFlavian.jpg";
+import lovisa from "./assets/images/imgLovisa.jpg";
 
 import cardRogue from "./assets/images/cardRogue.png";
 import cardWarlock from "./assets/images/cardWarlock.png";
@@ -64,13 +65,18 @@ export const data = {
       card: cardWizard,
     },
     {
-      name: "Ilvaaj",
+      name: "Lovisa",
       class: "Ranger (Horizon Walker)",
       race: "Shifter (Swiftstrider)",
       alignment: "Lawful Good",
-      about: `Ilvaaj is a renown scholar and has a keen interest in technology, relics and mythology. There are a wide variety of rumors surrounding him, such as that he suddenly appeared in Avrovia during a night devoid of stars, but none of these have any foundation and he presently ignores them rather than providing answers. He works with and answers only to those of a higher station than him.`,
+      about: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Consequatur laudantium cumque minima aspernatur ullam corrupti
+      vel, perspiciatis eius, debitis necessitatibus, expedita
+      deleniti architecto sequi tempore excepturi dolore quaerat
+      assumenda harum eveniet est dolorem illum. Minus dolorem
+      aperiam assumenda cum beatae?`,
       playersNotes: `Player's notes`,
-      art: anya,
+      art: lovisa,
       card: cardRanger,
     },
     {
