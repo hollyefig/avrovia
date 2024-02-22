@@ -113,8 +113,6 @@ export default function Sect4() {
     gsap.set(".blackOverlay", { display: "flex" });
     gsap.set("body", { overflow: "hidden" });
 
-    console.log(index);
-
     setGalaImg({ img: e, index: index });
     index === 0 && gsap.set(".moveLeft", { opacity: 0.3 });
     index === galaArr.length - 1 && gsap.set(".moveRight", { opacity: 0.3 });

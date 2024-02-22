@@ -22,7 +22,7 @@ export default function Sect3() {
     setTrack(e);
     audio.pause();
     tl.current.clear();
-    setPlay((prev) => !prev);
+    setPlay(true);
     setLength(e.dur);
 
     const newAudio = new Audio(e.mp3);
