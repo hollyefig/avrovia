@@ -26,7 +26,7 @@ export default function Sect3() {
     setLength(e.dur);
 
     const newAudio = new Audio(e.mp3);
-    newAudio.addEventListener("ended", audioEnd);
+
     setAudio(newAudio);
 
     tl.current
@@ -47,12 +47,9 @@ export default function Sect3() {
   // ! pause/ play
   const pauseSong = () => {
     if (audio.paused) {
-      if (audio.currentTime === 0) {
-      } else {
-        tl.current.resume();
-        audio.play();
-        setPlay((prev) => !prev);
-      }
+      tl.current.resume();
+      audio.play();
+      setPlay((prev) => !prev);
     } else {
       tl.current.pause();
       audio.pause();
@@ -100,7 +97,8 @@ export default function Sect3() {
     setPlay((prev) => !prev);
     tl.current.restart();
     tl.current.pause();
-    setLength(Math.floor(audio.duration));
+    setLength(track.dur);
+    // console.log(track);
   };
 
   // * UseEffect
@@ -113,6 +111,8 @@ export default function Sect3() {
   }, []);
   //* for countdown
   useEffect(() => {
+    audio.addEventListener("ended", audioEnd);
+
     let countInt;
 
     const countdown = () => {
@@ -125,8 +125,9 @@ export default function Sect3() {
 
     return () => {
       clearInterval(countInt);
+      audio.removeEventListener("ended", audioEnd);
     };
-  }, [length, play]);
+  }, [length, play, audio, audioEnd]);
 
   return (
     <div className='sect3Wrap'>

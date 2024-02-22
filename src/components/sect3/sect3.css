@@ -148,7 +148,7 @@
 .song {
     width: 100%;
     display: grid;
-    grid-template-columns: 15px min-content max-content auto;
+    grid-template-columns: 15px min-content auto auto;
     column-gap: 10px;
     cursor: pointer;
     padding: 0 10px 0 5px;
