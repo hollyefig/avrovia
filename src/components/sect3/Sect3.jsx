@@ -12,6 +12,7 @@ export default function Sect3() {
   const [track, setTrack] = useState();
   const [audio, setAudio] = useState(new Audio());
   const [play, setPlay] = useState(false);
+  const [length, setLength] = useState(null);
 
   // ^ gsap
   const tl = useRef();
@@ -21,9 +22,11 @@ export default function Sect3() {
     setTrack(e);
     audio.pause();
     tl.current.clear();
-    setPlay(true);
+    setPlay((prev) => !prev);
+    setLength(e.dur);
 
     const newAudio = new Audio(e.mp3);
+    newAudio.addEventListener("ended", audioEnd);
     setAudio(newAudio);
 
     tl.current
@@ -44,13 +47,16 @@ export default function Sect3() {
   // ! pause/ play
   const pauseSong = () => {
     if (audio.paused) {
-      tl.current.resume();
-      audio.play();
-      setPlay(true);
+      if (audio.currentTime === 0) {
+      } else {
+        tl.current.resume();
+        audio.play();
+        setPlay((prev) => !prev);
+      }
     } else {
       tl.current.pause();
       audio.pause();
-      setPlay(false);
+      setPlay((prev) => !prev);
     }
   };
 
@@ -59,17 +65,42 @@ export default function Sect3() {
     if (e === "add") {
       if (audio.currentTime + 10 < audio.duration) {
         audio.currentTime += 10;
+        setLength((prev) => prev - 10);
       }
       tl.current.seek(tl.current._time + 10);
     } else if (e === "sub") {
       if (audio.currentTime > 10) {
         audio.currentTime -= 10;
+        setLength((prev) => prev + 10);
         tl.current.seek(tl.current._time - 10);
       } else if (audio.currentTime < 10) {
         audio.currentTime = 0;
         tl.current.restart();
+        setLength(Math.floor(audio.duration));
       }
     }
+  };
+
+  // ! convert duration time
+  const convertTime = (e) => {
+    let sec = e % 60;
+    let hr = (e - sec) / 60;
+
+    if (sec.toString().length === 1) {
+      sec = "0" + sec;
+    }
+
+    return `${hr}:${sec}`;
+  };
+
+  // ! audio ends
+  const audioEnd = () => {
+    audio.currentTime = 0;
+    audio.pause();
+    setPlay((prev) => !prev);
+    tl.current.restart();
+    tl.current.pause();
+    setLength(Math.floor(audio.duration));
   };
 
   // * UseEffect
@@ -80,78 +111,71 @@ export default function Sect3() {
       },
     });
   }, []);
+  //* for countdown
+  useEffect(() => {
+    let countInt;
+
+    const countdown = () => {
+      length !== 0 && setLength((prev) => prev - 1);
+    };
+
+    if (play) {
+      countInt = setInterval(countdown, 1000);
+    }
+
+    return () => {
+      clearInterval(countInt);
+    };
+  }, [length, play]);
 
   return (
     <div className='sect3Wrap'>
       <Svgs />
       <div className='sect3Bg'>
         <div className='sect3Flex'>
-          {/* RIGHT Side */}
-          <div className='sect3Right'>
-            {musicData.map((e, index) => {
-              const num = index + 1;
-              return (
-                <div
-                  className='song copyFont'
-                  key={e.name}
-                  onClick={() => songSelect(e)}
-                >
-                  <span className='songPlaying'>
-                    <div
-                      className='activeSong'
-                      style={
-                        track !== undefined && track.name === e.name
-                          ? { opacity: "1" }
-                          : {}
-                      }
-                    ></div>
-                  </span>
-                  <span className='songNum'>{num < 10 ? `0${num}` : num}</span>
-                  <span
-                    className='songName'
-                    style={
-                      track !== undefined && track.name === e.name
-                        ? { textShadow: "0px 0px 8px #ffffff", opacity: "1" }
-                        : {}
-                    }
-                  >
-                    {e.name}
-                  </span>
-                  <span className='songLength'></span>
-                </div>
-              );
-            })}
-          </div>
           {/* LEFT Side */}
           <div className='sect3Left'>
-            <span className='white musicSubhead'>
-              <svg
-                width='100'
-                height='100'
-                xmlns='http://www.w3.org/2000/svg'
-                className='parentSoundProg'
-              >
-                <circle
-                  cx='50'
-                  cy='50'
-                  r='43'
-                  className='soundProg'
-                  pathLength='100'
-                  strokeDashoffset='100'
-                  strokeDasharray='100'
-                />
-              </svg>
+            {/* TOP HALF */}
+            <div className='musicTopHalf'>
+              <div className='timeElapsed'>
+                {track && length
+                  ? `${convertTime(track.dur - length)}`
+                  : `0:00`}
+              </div>
+              {/* SVGs */}
+              <span className='white musicSubhead'>
+                <svg
+                  width='100'
+                  height='100'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='parentSoundProg'
+                >
+                  <circle
+                    cx='50'
+                    cy='50'
+                    r='43'
+                    className='soundProg'
+                    pathLength='100'
+                    strokeDashoffset='100'
+                    strokeDasharray='100'
+                  />
+                </svg>
 
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                xmlnsXlink='http://www.w3.org/1999/xlink'
-                className='musicSym'
-                width='80'
-                height='80'
-              >
-                <use href='#musicSym'></use>
-              </svg>
-            </span>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  xmlnsXlink='http://www.w3.org/1999/xlink'
+                  className='musicSym'
+                  width='80'
+                  height='80'
+                >
+                  <use href='#musicSym'></use>
+                </svg>
+              </span>
+              <div className='timeLeft'>
+                {length ? `-${convertTime(length)}` : `0:00`}
+              </div>
+            </div>
+            {/* BOTTOM */}
             <div className='player'>
               <span className='songTitle displayFont displaySmall'>
                 {track ? track.name : <em>Choose a song</em>}
@@ -208,6 +232,42 @@ export default function Sect3() {
 
               {/* <audio controls autoPlay src={track && track.mp3}></audio> */}
             </div>
+          </div>
+          {/* RIGHT Side */}
+          <div className='sect3Right'>
+            {musicData.map((e, index) => {
+              const num = index + 1;
+              return (
+                <div
+                  className='song copyFont'
+                  key={e.name}
+                  onClick={() => songSelect(e)}
+                >
+                  <span className='songPlaying'>
+                    <div
+                      className='activeSong'
+                      style={
+                        track !== undefined && track.name === e.name
+                          ? { opacity: "1" }
+                          : {}
+                      }
+                    ></div>
+                  </span>
+                  <span className='songNum'>{num < 10 ? `0${num}` : num}</span>
+                  <span
+                    className='songName'
+                    style={
+                      track !== undefined && track.name === e.name
+                        ? { textShadow: "0px 0px 8px #ffffff", opacity: "1" }
+                        : {}
+                    }
+                  >
+                    {e.name}
+                  </span>
+                  <span className='songLength'>{convertTime(e.dur)}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

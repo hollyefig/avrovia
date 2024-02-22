@@ -15,7 +15,7 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     color: var(--lightWhite);
     backdrop-filter: blur(26px);
     position: relative;
@@ -48,6 +48,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.musicTopHalf {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: var(--copyFont);
+}
+
+.musicTopHalf > div {
+    opacity: .8;
+    font-size: 14px;
 }
 
 .musicSubhead .musicSym {
@@ -138,6 +151,7 @@
     grid-template-columns: 15px min-content max-content auto;
     column-gap: 10px;
     cursor: pointer;
+    padding: 0 10px 0 5px;
 }
 
 .songPlaying {
@@ -168,6 +182,8 @@
     display: flex;
     justify-content: flex-end;
     font-style: italic;
+    opacity: .5;
+    font-size: 14px;
 }
 
 
@@ -175,7 +191,7 @@
 /* & responsive */
 @media only screen and (max-width:768px) {
     .sect3Flex {
-        flex-direction: column-reverse;
+        flex-direction: column;
         row-gap: 40px;
         padding: 0;
         max-width: 425px;
