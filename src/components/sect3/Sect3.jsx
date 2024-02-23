@@ -98,7 +98,6 @@ export default function Sect3() {
     tl.current.restart();
     tl.current.pause();
     setLength(track.dur);
-    // console.log(track);
   };
 
   // * UseEffect

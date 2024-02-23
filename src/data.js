@@ -2,6 +2,8 @@ import anya from "./assets/images/imgAnya.jpg";
 import mathilda from "./assets/images/imgMathilda.jpg";
 import flavian from "./assets/images/imgFlavian.jpg";
 import lovisa from "./assets/images/imgLovisa.jpg";
+import myth from "./assets/images/imgMyth.jpg";
+import ashar from "./assets/images/imgAshar.jpg";
 
 import cardRogue from "./assets/images/cardRogue.png";
 import cardWarlock from "./assets/images/cardWarlock.png";
@@ -50,7 +52,7 @@ export const data = {
       alignment: "Chaotic Neutral",
       about: `Lorem ipsum dolor sit amet consectetur adipisicing elit.Consequatur laudantium cumque minima aspernatur ullam corruptivel, perspiciatis eius, debitis necessitatibus, expedita deleniti architecto sequi tempore excepturi dolore quaerat assumenda harum eveniet est dolorem illum. Minus dolorem aperiam assumenda cum beatae?`,
       playersNotes: `Player's notes`,
-      art: anya,
+      art: myth,
       card: cardWarlock,
     },
     {
@@ -61,7 +63,7 @@ export const data = {
       about: `Ash is a total sweetheart and will probably act as the mom of the party. She cares about everything and everyone and if someone she cares about gets hurt she will absolutely fireball someone into next week.
       That said, she's a chaotic good wizard with a heart of gold and a bag full of necessities (like chocolate for example)! Loves books, reading, teaching and sweets~!`,
       playersNotes: `Player's notes`,
-      art: anya,
+      art: ashar,
       card: cardWizard,
     },
     {
