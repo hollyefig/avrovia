@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/avrovia/static/css/main.c4419422.css",
-    "main.js": "/avrovia/static/js/main.5ecfd215.js",
+    "main.js": "/avrovia/static/js/main.1f822c60.js",
     "static/media/Avrovia.mp3": "/avrovia/static/media/Avrovia.9dc0fffb60c8d17aa207.mp3",
     "static/media/SoulsofSardinia_NecroticWaters.mp3": "/avrovia/static/media/SoulsofSardinia_NecroticWaters.8ef8d241567e5257e5c2.mp3",
     "static/media/gallery3.png": "/avrovia/static/media/gallery3.e837598b24e333a79d5c.png",
@@ -72,8 +72,10 @@
     "static/media/gallery28.png": "/avrovia/static/media/gallery28.87d7cf8045c0840c863f.png",
     "static/media/followAdventure.png": "/avrovia/static/media/followAdventure.bd96d57583475fd6dcf2.png",
     "static/media/gallery25.png": "/avrovia/static/media/gallery25.eb907c9a1665b4f80461.png",
+    "static/media/imgAshar.jpg": "/avrovia/static/media/imgAshar.ee596ab71a67103c96d4.jpg",
     "static/media/gallery23.png": "/avrovia/static/media/gallery23.c5fce215993d947311e0.png",
     "static/media/imgLovisa.jpg": "/avrovia/static/media/imgLovisa.c21ecae8d564012f7bd6.jpg",
+    "static/media/imgMyth.jpg": "/avrovia/static/media/imgMyth.ead1af3e926d9ef58dd6.jpg",
     "static/media/imgFlavian.jpg": "/avrovia/static/media/imgFlavian.8007f4671255179af949.jpg",
     "static/media/imgMathilda.jpg": "/avrovia/static/media/imgMathilda.5705a714c9897ad9784a.jpg",
     "static/media/imgAnya.jpg": "/avrovia/static/media/imgAnya.703a986fd0f0be94acd1.jpg",
@@ -94,10 +96,10 @@
     "static/media/avroviaTitle.png": "/avrovia/static/media/avroviaTitle.8737b7f62d55fd2a6ede.png",
     "index.html": "/avrovia/index.html",
     "main.c4419422.css.map": "/avrovia/static/css/main.c4419422.css.map",
-    "main.5ecfd215.js.map": "/avrovia/static/js/main.5ecfd215.js.map"
+    "main.1f822c60.js.map": "/avrovia/static/js/main.1f822c60.js.map"
   },
   "entrypoints": [
     "static/css/main.c4419422.css",
-    "static/js/main.5ecfd215.js"
+    "static/js/main.1f822c60.js"
   ]
 }
